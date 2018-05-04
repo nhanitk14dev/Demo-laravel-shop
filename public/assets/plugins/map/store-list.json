@@ -1,0 +1,251 @@
+{
+    "regions": [{
+            "name": "NORTH",            
+            "stores": [{
+                    "name": "Lào Cai",
+                    "latlng": "22.470207, 103.987494",
+                    "childs": [{
+                            "region_name": "North",
+                            "store_name": "Công ty TNHH thương mại Hưng Tín",
+                            "store_address": "009 Trần Hưng Đạo, Phường Bắc Cường",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "store_cat": ["tiles", "roof tiles", "water heaters"],                       
+                            "url": "",
+                            "image": "",
+                            "latlng": "22.467277, 103.986210"
+                        }
+                    ]
+                },
+                {
+                    "name": "Hà Nội",
+                    "latlng": "21.027750, 105.834560",
+                    "childs": [{
+                            "region_name": "North",
+                            "store_name": "Công ty TNHH thương mại, sản xuất và dịch vụ Ý Việt",
+                            "store_address": "Số 83 An Trạch, Phường Cát Linh, Quận Đống Đa, Thành phố Hà Nội, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "21.027624, 105.828555"
+                        },
+                        {
+                            "region_name": "North",
+                            "store_name": "Công ty TNHH sản xuất và thương mại Hà Khánh",
+                            "store_address": "Số 38 Thanh Nhàn, Quận Hai Bà Trưng, Thành phố Hà Nội, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "21.003341, 105.860293"
+                        },
+                        {
+                            "region_name": "North",
+                            "store_name": "Công ty TNHH thương mại, sản xuất và dịch vụ Thành Trung",
+                            "store_address": "Số 4 phố Phan Đình Giót, Phường Phương Liệt, Quận Thanh Xuân, Thành phố Hà Nội, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "20.990492, 105.838103"
+                        },
+                        {
+                            "region_name": "North",
+                            "store_name": "Công ty CP đầu tư Quốc Anh",
+                            "store_address": "Số 85 Ngô Gia Tự, Phường Đức Giang, Quận Long Biên, Thành phố Hà Nội, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "21.058287, 105.890091"
+                        },
+                        {
+                            "region_name": "North",
+                            "store_name": "Công ty TNHH Hữu Thảo",
+                            "store_address": "Số 383 Hoàng Quốc Việt, Quận Cầu Giấy, Thành phố Hà Nội, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "21.046343, 105.792865"
+                        },
+                        {
+                            "region_name": "North",
+                            "store_name": "Công ty TNHH thương mại Nga Việt",
+                            "store_address": "Số 868 Đường Phạm Hùng, Trung Hòa, Cầu Giấy, Thành phố Hà Nội, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "21.019426, 105.781261"
+                        },
+                        {
+                            "region_name": "North",
+                            "store_name": "Công ty TNHH sản xuất, thương mại và dịch vụ Hùng Cường",
+                            "store_address": "Số 210, Hà Huy Tập, Yên Viên, Quận Gia Lâm, Thành phố Hà Nội, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "21.083189, 105.914930"
+                        },
+                        {
+                            "region_name": "North",
+                            "store_name": "Công ty TNHH xây dựng Cao Minh",
+                            "store_address": "Đường CN3, Cụm công nghiệp vừa và nhỏ, Quận Từ Liêm, Thành phố Hà Nội, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "21.045882, 105.740717"
+                        },
+                        {
+                            "region_name": "North",
+                            "store_name": "Công ty TNHH Chính Nghĩa",
+                            "store_address": "Số nhà 11, Đường Cao Lỗ, Xã Uy Nỗ, Huyện Đông Anh, Thành phố Hà Nội, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "21.139108, 105.854940"
+                        },
+                        {
+                            "region_name": "North",
+                            "store_name": "Công ty CP thương mại, dịch vụ và xây dựng Hiếu Trung",
+                            "store_address": "Số 83, Khối phố Nguyên Khê, Xã Nguyên Khê, Huyện Đông Anh, Thành phố Hà Nội, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "21.178254, 105.851714"
+                        },
+                        {
+                            "region_name": "North",
+                            "store_name": "Doanh nghiệp tư nhân vật liệu xây dựng Hoa Phượng",
+                            "store_address": "Đội 1, Thôn Dược Thượng, Xã Tiên Dược, Huyện Sóc Sơn, Thành phố Hà Nội, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "21.256213, 105.839483"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "CENTER",
+            "stores": [{
+                    "name": "Thừa Thiên Huế",
+                    "latlng": "16.447677, 107.550313",
+                    "childs": [{
+                            "region_name": "CENTER",
+                            "store_name": "Công ty TNHH Phước Loan",
+                            "store_address": "224 Hùng Vương, Thành phố Huế, Tỉnh Thừa Thiên Huế, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "16.453731, 107.600643"
+                        }                     
+                    ]
+                },
+                {
+                    "name": "Đà Nẵng",
+                    "latlng": "16.053866, 108.199029",
+                    "childs": [{
+                            "region_name": "CENTER",
+                            "store_name": "Công ty TNHH thương mại & dịch vụ Như Minh",
+                            "store_address": "194 Điện Biên Phủ, Phường Chính Gián, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "16.066126, 108.197546"
+                        },
+                        {
+                            "region_name": "CENTER",
+                            "store_name": "Công ty TNHH Việt Hương",
+                            "store_address": "67– 69 Điện Biên Phủ, Thành phố Đà Nẵng, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "16.065991, 108.203614"
+                        },
+                        {
+                            "region_name": "CENTER",
+                            "store_name": "Công ty TNHH MTV Vi-Na-King",
+                            "store_address": "Nhà kho số 2, Bến Xe Trung Tâm Thành phố Đà Nẵng, Phường Hòa An, Quận Cẩm Lệ, Thành phố Đà Nẵng, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "16.056732, 108.172588"
+                        },
+                        {
+                            "region_name": "CENTER",
+                            "store_name": "Công ty CP đầu tư Quốc Anh",
+                            "store_address": "Số 85 Ngô Gia Tự, Phường Đức Giang, Quận Long Biên, Thành phố Hà Nội, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "21.058287, 105.890091"
+                        }
+                    ]
+                },
+                {
+                    "name": "Phú Yên",
+                    "latlng": "13.105524, 109.294124",
+                    "childs": [{
+                            "region_name": "CENTER",
+                            "store_name": "Công ty TNHH thương mại Minh Tân Tiến",
+                            "store_address": "Số 62 Lê Lợi, Thành phố Tuy Hòa, Tỉnh Phú Yên, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "13.087436, 109.301362"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "SOUTH",
+            "stores": [{
+                    "name": "Bình Dương",
+                    "latlng": "10.993770, 106.669598",
+                    "childs": [{
+                            "region_name": "SOUTH",
+                            "store_name": "Công ty TNHH Thương Mại Công Thành",
+                            "store_address": "Số 49/5, Đại lộ Bình Dương, Phường Phú Hòa, Thành phố Thủ Dầu Một, Tỉnh Bình Dương, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "10.970763, 106.675731"
+                        }                     
+                    ]
+                },
+                {
+                    "name": "Đồng Nai",
+                    "latlng": "10.938613, 107.222346",
+                    "childs": [{
+                            "region_name": "CENTER",
+                            "store_name": "Công ty TNHH Thương mại Dịch vụ Thịnh Đức Phát",
+                            "store_address": "Số 230C, Xã Hố Nai 3, Huyện Trảng Bom, Tỉnh Đồng Nai, Việt Nam",
+                            "store_phone": "(211) 3888 987",
+                            "store_mail": "info@prime.vn",
+                            "url": "",
+                            "image": "",
+                            "latlng": "10.965579, 106.938832"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

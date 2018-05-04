@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Repositories;
+
+use Prettus\Repository\Contracts\RepositoryInterface;
+
+/**
+ * Interface RoleRepository
+ * @package namespace App\Repositories;
+ */
+interface RoleRepository extends RepositoryInterface
+{
+    public function datatable();
+
+    public function create(array $attributes);
+
+    public function update(array $attributes, $id);
+}

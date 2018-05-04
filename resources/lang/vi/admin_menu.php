@@ -1,0 +1,55 @@
+<?php
+return [
+    "sign_out" => "Đăng xuất",
+    "profile" => "Thông tin",
+
+    "dashboard" => "Bảng điều khiển",
+
+    "projects" => "Dự án",
+    "projects_list" => "Danh sách dự án",
+    "create_project" => "Tạo dự án",
+
+    "news" => "Tin tức",
+    "create_news" => "Tạo tin tức",
+    "news_list" => "Danh sách tin tức",
+    "categories" => "Thể loại",
+
+    "careers" => "Tuyển dụng",
+    "careers_list" => "Dánh sách tuyển dụng",
+    "create_career" => "Tạo tin đăng",
+    'applications' => 'Ứng tuyển',
+
+    "products" => "Sản phẩm",
+    "products_list" => "Danh sách sản phẩm",
+    "create_product" => "Tạo sản phẩm",
+
+    "brands" => "Nhãn hiệu",
+    "collections" => "Bộ sưu tập",
+    "surfaces" => "Bề mặt",
+    "sizes" => "Kích thước",
+    "natures" => "Tính chất",
+    "producers" => "Nhà sản xuất",
+    "contacts" => "Liên hệ",
+    "reviews" => "Đánh giá sản phẩm",
+    "branches" => "Chi nhánh",
+    "colors" => "Màu sắc",
+    "settings" => "Phân cảnh",
+    "models" => "Model",
+    "volumes" => "Dung tích",
+    "banners" => "Băng rôn",
+    "email_receiver" => "Email người nhận",
+    "faq" => "Câu hỏi thường gặp",
+    "faq_list" => "Danh sách FAQs",
+    "faq_category" => "Danh mục FAQs",
+    'pages' => 'Trang',
+    'pages_list' => 'Danh sách trang',
+    'create_custom_page' => 'Tạo trang tùy chỉnh',
+    'create_static_page' => 'Tạo trang tĩnh',
+    'system' => 'Hệ thống',
+    'roles' => 'Vai trò',
+    'users' => 'Tài khoản',
+    'footer' => 'Shop Bánh Sinh Nhật',
+    'media' => 'Đa phương tiện',
+    'product_delete_from_file' => 'Xóa sản phẩm',
+    'product_upload_from_file' => 'Tạo sản phẩm từ file'
+];

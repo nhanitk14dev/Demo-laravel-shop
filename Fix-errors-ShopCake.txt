@@ -1,0 +1,42 @@
+ShopCake:
+0. id_type = categories_id => tree, type_product = Product_categories model
+   - name_trans = name in category, name product translation
+1. Model:class in relationship / 
+	- not id_foreign,..=> errors user seeder
+	- $timestamps = false;
+
+2. shopping cart:
+   - config: cart.php + migration
+   - sau khi them vao => xoa: Cart::destroy(); thay cho session
+
+3. image: cart->option->img
+
+4. search = User::where('email',$req->email)->first(); phai dung first vi dung where dkien de loc
+   - if(!search) ko co them isempty()->chi khi su dung $this->model
+
+5. translation:
+   - mca: https://tutorials.kode-blog.com/laravel-5-localization
+   - menu: 
+   - kernel.php 
+   - lang:/route.php
+   - trang chu: front/page/en[vi] => header
+   - trans('route.'), {!! __('f_top.') !!}
+   - route/en/vi: translation => view  currentPageMenu > slug
+
+6. Session: 
+   - config translate: en/vi
+   - redirect()->back(); moi su dung dc, ko cho qua route moi(/)
+
+7. ViewComposer: 
+   - category
+
+8. Upload Image:
+   - install: intervention/image, photo.config
+   - views: upload_template
+   - views/layouts/partials => define (max_upload)
+   - config/ photo.php
+9. Create Products:
+   - name: config => array
+   - config: sluggable/ => trans->name ?? 
+10. tawk.to
+   email: nhanitk14dev@gmail.com  pass: 140896nhanitk14
