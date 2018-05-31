@@ -31,8 +31,6 @@ interface ProductCategoryRepository extends RepositoryInterface
 
     public function getCategoryBySlug($slug, $with = ['children'], $level = -1);
 
-    public function galleries($category_id, $product_id);
-
     public function sort($positions);
 
     

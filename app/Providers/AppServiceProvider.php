@@ -50,16 +50,7 @@ class AppServiceProvider extends ServiceProvider
         //chia se locale da ngon ngu 
         View::composer('*', function ($view){
             $view->with('composer_locale', \App::getLocale());
-        });
-
-        /*view()->composer('page.dathang',function($view){
-            if(Session::has('cart')){
-                $oldCart = Session::get('cart'); 
-                $cart = new Cart($oldCart);
-                $view->with(['cart'=>Session::get('cart'),'product_cart'=>$cart->items,'totalPrice'=>$cart->totalPrice,'totalQty'=>$cart->totalQty]);
-            }
-            
-        });*/ 
+        }); 
         
         Schema::defaultStringLength(191); 
         

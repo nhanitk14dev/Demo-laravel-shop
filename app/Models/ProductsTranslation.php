@@ -9,17 +9,16 @@ class ProductsTranslation extends Model
 {
     use Sluggable;
 
-    protected $table = 'products_translation';
+    protected $table = 'product_translation';
 
     public $timestamps = false;
 
     protected $fillable = [
+        'product_id',
         'name',
-        'remark',
-        'slug'
+        'slug',
+        'locale'
     ];
-
-    public $translatedAttributes = array('name','remark','slug');
 
 
     //public $translationModel = 'MyApp\Models\CountryAwesomeTranslation';

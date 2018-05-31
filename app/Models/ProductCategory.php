@@ -9,31 +9,28 @@ use App\Traits\ModelEventTrait;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
-class ProductType extends Model implements Transformable
+class ProductCategory extends Model implements Transformable
 {
     use \Dimsav\Translatable\Translatable, TransformableTrait, MetadataTrait, CatalogueTrait, ModelEventTrait;
 
 
-    protected $table = 'type_products';
+    protected $table = 'product_category';
 
     protected $fillable = [
-        'name',
-        'description',
         'image',
         'parent_id',
         'icon',
         'level',
         'style',
-        'image_1',
-        'position'
+        'image',
+        'position',
+        'banner'
     ];
 
     public $translatedAttributes = [
         'name',
         'slug',
-        'short_description',
         'description',
-        'alias_name',
         
     ];
 
@@ -42,10 +39,10 @@ class ProductType extends Model implements Transformable
     	return $this->belongsToMany(Products::class,'id_type','id');
     }
 
-    //ddkien parent_id.Product = id.ProductType
+    //ddkien parent_id.Product = id.ProductCategory
     public function children()
     {
-        return $this->hasMany(ProductType::class, 'parent_id', 'id')
+        return $this->hasMany(ProductCategory::class, 'parent_id', 'id')
             ->orderBy('level', 'asc')
             ->orderBy('position', 'asc')
             ->orderBy('id', 'asc');
@@ -53,7 +50,7 @@ class ProductType extends Model implements Transformable
 
     public function parent()
     {
-        return $this->belongsTo(ProductType::class, 'parent_id', 'id');
+        return $this->belongsTo(ProductCategory::class, 'parent_id', 'id');
     }
 
     public static function getStyles($key = null)

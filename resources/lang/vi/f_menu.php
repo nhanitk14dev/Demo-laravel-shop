@@ -13,5 +13,8 @@ return [
     "faq" => "Câu hỏi thường gặp",
     'checkout' => 'Đặt Hàng',
     'shopping_carts' => 'Xem giỏ hàng',
-    'search_products' => 'Tìm kiếm sản phẩm'
+    'search_products' => 'Tìm kiếm sản phẩm',
+    'name' => 'Tên khách hàng',
+    'hi' => 'Xin Chào',
+    
 ];

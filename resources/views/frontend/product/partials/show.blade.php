@@ -1,15 +1,5 @@
 @extends('frontend.layouts.master')
 
-@section('style')
-    
-	<link href="/assets/themes/js/google-code-prettify/prettify.css" rel="stylesheet"/>
-	<!-- fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/themes/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/themes/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/themes/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="/assets/themes/images/ico/apple-touch-icon-57-precomposed.png">
-@endsection
-
 @section('content')
 <div id="mainBody">
 	<div class="container">
@@ -419,10 +409,4 @@
 	</div><!---end container-->
 </div>
 
-@endsection
-
-@section('script')
-	<script src="/assets/themes/js/google-code-prettify/prettify.js"></script>
-	<script src="/assets/themes/js/bootshop.js"></script>
-    <script src="/assets/themes/js/jquery.lightbox-0.5.js"></script>
 @endsection

@@ -12,5 +12,10 @@ return [
     "faq" => "FAQs",
     'checkout' => 'CheckOut',
     'shopping_carts' => 'Shopping Carts',
-    'search_products' => 'Search Products'
+    'search_products' => 'Search Products',
+
+    //top
+    'name' => 'Name Customers',
+    'hi' => 'Hi',
+   
 ];

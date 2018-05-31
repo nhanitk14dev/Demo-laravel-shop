@@ -3,12 +3,12 @@
 namespace App\Repositories;
 
 use App\Models\Products;
-use App\Models\ProductType;
+use App\Repositories\ProductCategoryRepository;
 use App\Traits\UploadPhotoTrait;
 use App\Validators\ProductValidator;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Eloquent\BaseRepository;
-
+use App\Models\ProductCategory;
 /**
  * Class ProductRepositoryEloquent
  *
@@ -25,7 +25,7 @@ class ProductCategoryRepositoryEloquent extends BaseRepository implements Produc
      */
     public function model()
     {
-        return ProductType::class;
+        return ProductCategory::class;
     }
 
     /**
@@ -128,7 +128,7 @@ class ProductCategoryRepositoryEloquent extends BaseRepository implements Produc
                 if (in_array(0, $list_id)) {
                     $checked = 'checked';
                 }
-                $string .= '<li class="root-tree"><input type="radio" class="with-gap radio-col-red" level="-1" id="category-0" name="id_type" ' . $checked . ' value="0" />';
+                $string .= '<li class="root-tree"><input type="radio" class="with-gap radio-col-red" level="-1" id="category-0" name="category_id" ' . $checked . ' value="0" />';
                 $string .= '<label for="category-0"> ' . trans("admin_product_category.attr.root") . '</label></li>';
                 $root = false;
             }
@@ -146,9 +146,9 @@ class ProductCategoryRepositoryEloquent extends BaseRepository implements Produc
                 $string .= '<li>';
 
                 if ($type === 'checkbox') {
-                    $string .= '<input type="' . $type . '" class="chk-col-red" level="' . $rs->level . '" id="category-' . $rs->id . '" name="id_type[]" ' . $checked . ' ' . $disabled . ' value="' . $rs->id . '" />';
+                    $string .= '<input type="' . $type . '" class="chk-col-red" level="' . $rs->level . '" id="category-' . $rs->id . '" name="cate[]" ' . $checked . ' ' . $disabled . ' value="' . $rs->id . '" />';
                 } else {
-                    $string .= '<input type="' . $type . '" class="with-gap radio-col-red" level="' . $rs->level . '" id="category-' . $rs->id . '" name="id_type" ' . $checked . ' ' . $disabled . ' value="' . $rs->id . '" />';
+                    $string .= '<input type="' . $type . '" class="with-gap radio-col-red" level="' . $rs->level . '" id="category-' . $rs->id . '" name="category_id" ' . $checked . ' ' . $disabled . ' value="' . $rs->id . '" />';
                 }
                 $string .= '<label for="category-' . $rs->id . '"> ' . $rs->name . '</label>';
 
@@ -164,18 +164,20 @@ class ProductCategoryRepositoryEloquent extends BaseRepository implements Produc
 
     public function store(array $input)
     {
-        $input["parent_id"] = $input["id_type"];
-        unset($input["id_type"]);
-        $input['is_display'] = !empty($input['is_display']) ? 1 : 0;
+       
+        $input["parent_id"] = $input["category_id"];
+        unset($input["category_id"]);
 
-        $level = 0;
+        //$input['is_display'] = !empty($input['is_display']) ? 1 : 0;
+
+        //$level = 0;
         if (!empty($input["parent_id"])) {
             $parentCategory = $this->model->findOrFail($input["parent_id"]);
             $level = $parentCategory->level + 1;
         }
-        $input["level"] = $level;
+        //$input["level"] = $level;
 
-        $this->uploadPhotos($input);
+        //$this->uploadPhotos($input);
 
         $category = $this->model->create($input);
 
@@ -194,32 +196,16 @@ class ProductCategoryRepositoryEloquent extends BaseRepository implements Produc
     {
         $category = $this->model->findOrFail($id);
 
-        $input["parent_id"] = $input["id_type"];
-        unset($input["id_type"]);
-        $input['is_display'] = !empty($input['is_display']) ? 1 : 0;
+        $input["parent_id"] = $input["category_id"];
+        unset($input["category_id"]);
+        //$input['is_display'] = !empty($input['is_display']) ? 1 : 0;
 
-        $level = 0;
+        //$level = 0;
         if (!empty($input["parent_id"])) {
             $parentCategory = $this->model->findOrFail($input["parent_id"]);
             $level = $parentCategory->level + 1;
         }
-        $input["level"] = $level;
-
-        // Delete icon and image 1, 2, 3, gallery_image
-        $this->deletePhoto($input, "delete_icon", "icon");
-        $this->deletePhoto($input, "delete_image_1", "image_1");
-        $this->deletePhoto($input, "delete_image_2", "image_2");
-        $this->deletePhoto($input, "delete_image_3", "image_3");
-        $this->deletePhoto($input, "delete_gallery_image", "gallery_image");
-        $this->deletePhoto($input, "delete_discover_image", "discover_image");
-
-        // Delete catalogues
-        if (!empty($input["delete_catalogue"])) {
-            $category->deleteCatalogues($input["delete_catalogue"]);
-        }
-
-        $this->uploadPhotos($input);
-
+        //$input["level"] = $level;
 
         $category->update($input);
 
@@ -227,95 +213,12 @@ class ProductCategoryRepositoryEloquent extends BaseRepository implements Produc
             $category->metaCreateOrUpdate($input["metadata"]);
         }
 
-        if (!empty($input["catalogue"])) {
-            $category->storeCatalogues($input["catalogue"]);
-        }
-
         return $category;
-    }
-
-    private function uploadPhotos(&$input)
-    {
-        if (!empty($input['category_icon'])) {
-            $config = config("photos.product_category_icon");
-            $info = $this->storePhoto($input["category_icon"], $config);
-            $input["icon"] = $info["full_path"];
-            unset($input["category_icon"]);
-        }
-
-        if (!empty($input['category_image_1'])) {
-            $config = config("photos.product_category_image_1");
-            $info = $this->storePhoto($input["category_image_1"], $config);
-            $input["image_1"] = $info["full_path"];
-            unset($input["category_image_1"]);
-        }
-
-        if (!empty($input['category_image_2'])) {
-            $config = config("photos.product_category_image_2");
-            $info = $this->storePhoto($input["category_image_2"], $config);
-            $input["image_2"] = $info["full_path"];
-            unset($input["category_image_2"]);
-        }
-
-        if (!empty($input['category_image_3'])) {
-            $config = config("photos.product_category_image_3");
-            $info = $this->storePhoto($input["category_image_3"], $config);
-            $input["image_3"] = $info["full_path"];
-            unset($input["category_image_3"]);
-        }
-
-        if (!empty($input['category_gallery_image'])) {
-            $config = config("photos.product_category_gallery_image");
-            $info = $this->storePhoto($input["category_gallery_image"], $config);
-            $input["gallery_image"] = $info["full_path"];
-            unset($input["category_gallery_image"]);
-        }
-
-        if (!empty($input['category_discover_image'])) {
-            $config = config("photos.product_category_discover_image");
-            $info = $this->storePhoto($input["category_discover_image"], $config);
-            $input["discover_image"] = $info["full_path"];
-            unset($input["category_discover_image"]);
-        }
-
-        return $input;
-    }
-
-    private function deletePhoto(&$input, $key, $column)
-    {
-        if (!empty($input[$key])) {
-            \Storage::delete($input[$key]);
-            $input[$column] = null;
-        }
-        return $input;
     }
 
     public function destroy($id)
     {
         $category = $this->model->findOrFail($id);
-        $category->deleteCatalogues([], true);
-        $category->meta()->delete();
-
-        // Delete icon and image 1, 2, 3, gallery_image, discover_image
-        $input = [
-            "delete_icon" => $category->icon,
-            "delete_image_1" => $category->image_1,
-            "delete_image_2" => $category->image_2,
-            "delete_image_3" => $category->image_3,
-            "delete_gallery_image" => $category->gallery_image,
-            "delete_discover_image" => $category->discover_image
-        ];
-        $this->deletePhoto($input, "delete_icon", "icon");
-        $this->deletePhoto($input, "delete_image_1", "image_1");
-        $this->deletePhoto($input, "delete_image_2", "image_2");
-        $this->deletePhoto($input, "delete_image_3", "image_3");
-        $this->deletePhoto($input, "delete_gallery_image", "gallery_image");
-        $this->deletePhoto($input, "delete_discover_image", "discover_image");
-
-        // Remove child categories
-        foreach ($category->children as $child) {
-            $this->destroy($child->id);
-        }
 
         $category->delete();
 
@@ -344,11 +247,11 @@ class ProductCategoryRepositoryEloquent extends BaseRepository implements Produc
         });
     }
 
-    public function galleries($id_type, $product_id)
+    public function galleries($category_id, $product_id)
     {
         $model = MediaObject::where('level', 1)
-            ->whereHas('product.categories', function ($q) use ($id_type) {
-                $q->where('product_categories.id', $id_type);
+            ->whereHas('product.categories', function ($q) use ($category_id) {
+                $q->where('product_categories.id', $category_id);
             });
         if (!empty($product_id)) {
             $model->where('object_id', $product_id);

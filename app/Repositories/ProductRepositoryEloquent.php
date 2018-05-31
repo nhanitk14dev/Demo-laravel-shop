@@ -78,11 +78,39 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
         $locales = config('laravellocalization.supportedLocales');
 
         foreach ($locales as $key => $value) {
+
             if (empty($input[$key]['name'])) {
                 $input[$key]['name'] = $input[$key]['name'];
-            }
 
+
+            }
         }
+
+        $input['is_new'] = empty($input['is_new']) ? 0 : 1;
+        $input['active'] = empty($input['active']) ? 0 : 1;
+
+        $product = $this->model->create($input);
+
+
+        if (!empty($input['photos'])) {
+            $this->uploadPhotos($input['photos'], $product);
+        }
+
+        //thu vien anh
+        if (!empty($input['medias_photos'])) {
+            $product->photos()->attach(
+                $input['medias_photos'], [
+                    'type' => $product->getTable(),
+                    'level' => 0,
+                ]
+            );
+        }
+
+        if (!empty($input['category_id'])) {
+            $product->categories()->attach($input['category_id']);
+        }
+
+        return $product;
 
     }
 

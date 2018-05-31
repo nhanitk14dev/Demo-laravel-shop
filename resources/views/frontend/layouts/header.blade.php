@@ -1,11 +1,11 @@
 <div id="header">
 	<div class="container">
 		<div id="welcomeLine" class="row">
-			<div class="span6">Xin Chào<strong> Khách Hàng 1</strong></div>
+			<div class="span6">{{ trans('f_menu.hi') }}<strong> {{ trans('f_menu.name') }}</strong></div>
 			<div class="span6">
 				<div class="pull-right">
-					<span class="btn btn-mini">VI</span>
-					<a href="product_summary.html"><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i> [ 3 ] sản phẩm</span> </a> 
+					@include('frontend.layouts.partials.route_translation')
+					<a href="product_summary.html"><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i> [ 3 ] {{ trans('f_menu.products') }}</span> </a> 
 				</div>
 			</div>
 		</div>
@@ -30,16 +30,16 @@
 					<button type="submit" id="submitButton" class="btn btn-primary">Go</button>
 				</form>
 				<ul id="topMenu" class="nav pull-right">
-					<li class=""><a href="{{ route('front.product.index') }}">Sản Phẩm</a></li>
-					<li class=""><a href="{{ route('front.about') }}">Giới Thiệu</a></li>
-					<li class=""><a href="{{ route('front.contact') }}">Liên Hệ</a></li>
+					<li class=""><a href="{{ route('front.product.index') }}">{{ trans('f_menu.products') }}</a></li>
+					<li class=""><a href="{{ route('front.about') }}">{{ trans('f_menu.about_us') }}</a></li>
+					<li class=""><a href="{{ route('front.contact') }}">{{ trans('f_menu.contact_us') }}</a></li>
 					<li class=""><a href="{{ route('front.faq') }}">FAQ</a></li>
 					<li class="">
-						<a href="#login" role="button" data-toggle="modal" ><span class="btn btn-large btn-success">Đăng Nhập</span></a>
+						<a href="#login" role="button" data-toggle="modal" ><span class="btn btn-large btn-success">{{ trans('f_top.login') }}</span></a>
 						<div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-								<h3>Đăng nhập</h3>
+								<h3>{{ trans('f_top.login') }}</h3>
 							</div>
 							<div class="modal-body">
 								<form class="form-horizontal loginFrm">
@@ -51,12 +51,12 @@
 									</div>
 									<div class="control-group">
 										<label class="checkbox">
-											<input type="checkbox"> Ghi nhớ đăng nhập
+											<input type="checkbox"> {{ trans('f_top.remember') }}
 										</label>
 									</div>
 								</form>		
-								<button type="submit" class="btn btn-success">Đăng Nhập</button>
-								<button class="btn" data-dismiss="modal" aria-hidden="true">Đóng</button>
+								<button type="submit" class="btn btn-success">{{ trans('f_top.login') }}</button>
+								<button class="btn" data-dismiss="modal" aria-hidden="true">{{ trans('f_top.close') }}</button>
 							</div>
 						</div>
 					</li>

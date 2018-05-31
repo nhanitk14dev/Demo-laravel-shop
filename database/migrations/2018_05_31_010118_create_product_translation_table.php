@@ -13,17 +13,15 @@ class CreateProductTranslationTable extends Migration
      */
     public function up()
     {
-        Schema::create('products_translation', function (Blueprint $table) {
+        Schema::create('product_translation', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('products_id')->unsigned();
+            $table->integer('product_id')->unsigned();
             $table->string('locale')->index();
-
             $table->string("name")->nullable();
             $table->string("slug")->nullable();
-            $table->string('remark')->nullable();
-
-            $table->unique(['products_id','locale']);
-            $table->foreign('products_id')->references('id')->on('products')->onDelete('cascade');
+            
+            $table->unique(['product_id','locale']);
+            $table->foreign('product_id')->references('id')->on('product')->onDelete('cascade');
         });
     }
 
@@ -34,8 +32,6 @@ class CreateProductTranslationTable extends Migration
      */
     public function down()
     {
-        Schema::table('product_translation', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('product_translation');
     }
 }

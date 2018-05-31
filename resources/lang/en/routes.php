@@ -3,6 +3,7 @@ return [
     
     'product' => 'products',
     'product_category' => 'products/category/{category_slug}',
+    'product_show' => 'products/category',
     
     // custom page
     'home' => '/en',

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Helper\Breadcrumb;
-use App\Models\ProductType;
+use App\Models\ProductCategory;
 use App\Repositories\ProductCategoryRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -65,7 +65,7 @@ class ProductCategoryController extends Controller
 
         $category = $this->category->find($id);
 
-        $styles = ProductType::getStyles();
+        $styles = ProductCategory::getStyles();
 
         $disable_ids = [
             $id
