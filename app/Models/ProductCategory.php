@@ -14,9 +14,10 @@ class ProductCategory extends Model implements Transformable
     use \Dimsav\Translatable\Translatable, TransformableTrait, MetadataTrait, CatalogueTrait, ModelEventTrait;
 
 
-    protected $table = 'product_category';
+    protected $table = 'product_categories';
 
     protected $fillable = [
+        'product_id',
         'image',
         'parent_id',
         'icon',
@@ -24,7 +25,8 @@ class ProductCategory extends Model implements Transformable
         'style',
         'image',
         'position',
-        'banner'
+        'banner',
+        'is_display'
     ];
 
     public $translatedAttributes = [

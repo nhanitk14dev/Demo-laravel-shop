@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Models\Products;
+use App\Models\Product;
 use App\Repositories\ProductCategoryRepository;
 use App\Traits\UploadPhotoTrait;
 use App\Validators\ProductValidator;
@@ -168,14 +168,14 @@ class ProductCategoryRepositoryEloquent extends BaseRepository implements Produc
         $input["parent_id"] = $input["category_id"];
         unset($input["category_id"]);
 
-        //$input['is_display'] = !empty($input['is_display']) ? 1 : 0;
+        $input['is_display'] = !empty($input['is_display']) ? 1 : 0;
 
-        //$level = 0;
+        $level = 0;
         if (!empty($input["parent_id"])) {
             $parentCategory = $this->model->findOrFail($input["parent_id"]);
             $level = $parentCategory->level + 1;
         }
-        //$input["level"] = $level;
+        $input["level"] = $level;
 
         //$this->uploadPhotos($input);
 
@@ -198,14 +198,14 @@ class ProductCategoryRepositoryEloquent extends BaseRepository implements Produc
 
         $input["parent_id"] = $input["category_id"];
         unset($input["category_id"]);
-        //$input['is_display'] = !empty($input['is_display']) ? 1 : 0;
+        $input['is_display'] = !empty($input['is_display']) ? 1 : 0;
 
-        //$level = 0;
+        $level = 0;
         if (!empty($input["parent_id"])) {
             $parentCategory = $this->model->findOrFail($input["parent_id"]);
             $level = $parentCategory->level + 1;
         }
-        //$input["level"] = $level;
+        $input["level"] = $level;
 
         $category->update($input);
 

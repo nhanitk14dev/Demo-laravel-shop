@@ -9,14 +9,7 @@
     <li role="presentation">
         <a href="#photos" data-toggle="tab" aria-expanded="false">{!! trans("admin_product.tab.photos") !!}</a>
     </li>
-
-    <li role="presentation">
-        <a href="#gallery" data-toggle="tab" aria-expanded="false">{!! trans("admin_product.tab.gallery") !!}</a>
-    </li>
-
-    <li role="presentation">
-        <a href="#branch" data-toggle="tab" aria-expanded="false">{!! trans("admin_product.tab.branch") !!}</a>
-    </li>
+    
     <li role="presentation">
         <a href="#seo" data-toggle="tab" aria-expanded="false">{!! trans("admin_seo.tab.seo") !!}</a>
     </li>

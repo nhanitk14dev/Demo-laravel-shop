@@ -48,10 +48,6 @@
                                 @include("admin.product.partials.photos")
                             </div>
 
-                            <div role="tabpanel" class="tab-pane fade" id="gallery">
-                                @include("admin.product.partials.gallery")
-                            </div>
-
                             <div role="tabpanel" class="tab-pane fade" id="seo">
                                 @include("admin.metadata.form")
                             </div>
@@ -76,6 +72,8 @@
     <script src="/assets/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
 
     <script src="/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 
     <!-- Jquery Validation Plugin Css -->
     <script src="/assets/plugins/jquery-validation/jquery.validate.js"></script>

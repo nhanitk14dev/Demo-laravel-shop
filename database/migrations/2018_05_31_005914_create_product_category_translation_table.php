@@ -20,7 +20,7 @@ class CreateProductCategoryTranslationTable extends Migration
             $table->string('locale')->index();
             $table->text('description')->nullable();
             $table->unique(['product_category_id','locale']);
-            $table->foreign('product_category_id')->references('id')->on('product_category')->onDelete('cascade');
+            $table->foreign('product_category_id')->references('id')->on('product_categories')->onDelete('cascade');
         });
     }
 

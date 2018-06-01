@@ -3,12 +3,23 @@ jQuery(function ($) {
         placeholder: "---"
     });
 
-    $('#natures').select2({
+    $('#size_id').select2({
         placeholder: "---"
     });
 
-    $('#settings').select2({
+    $('#color_id').select2({
         placeholder: "---"
+    });
+
+    $('#end_date_promotion').datepicker({
+        autoclose: true,
+        //container: '#end_date_promotion-container'
+    });
+
+
+    $('#start_date_promotion').datepicker({
+        autoclose: true,
+        //container: '#start_date_promotion-container'
     });
 
     $('#form-form').validate({

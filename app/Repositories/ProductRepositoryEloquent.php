@@ -2,13 +2,14 @@
 
 namespace App\Repositories;
 
-use App\Models\Products;
+use App\Models\Product;
+use App\Models\ProductPhoto;
 use App\Models\ProductsTranslation;
-use App\Models\ProductType;
 use App\Traits\UploadPhotoTrait;
 use App\Validators\ProductValidator;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Eloquent\BaseRepository;
+use Carbon\Carbon;
 use Breadcrumb;
 /**
  * Class ProductRepositoryEloquent
@@ -32,7 +33,7 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
 
     public function model()
     {
-        return Products::class;
+        return Product::class;
     }
 
     /**
@@ -75,35 +76,17 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
     public function store(array $input)
     {
 
-        $locales = config('laravellocalization.supportedLocales');
-
-        foreach ($locales as $key => $value) {
-
-            if (empty($input[$key]['name'])) {
-                $input[$key]['name'] = $input[$key]['name'];
-
-
-            }
-        }
-
         $input['is_new'] = empty($input['is_new']) ? 0 : 1;
         $input['active'] = empty($input['active']) ? 0 : 1;
 
+        $input['start_date_promotion'] = !empty($input['start_date_promotion']) ? convertDatabaseTime($input['start_date_promotion'], PHP_DATE, DATABASE_DATE) : date(DATABASE_DATE);
+
+        $input['end_date_promotion'] = !empty($input['end_date_promotion']) ? convertDatabaseTime($input['end_date_promotion'], PHP_DATE, DATABASE_DATE) : date(DATABASE_DATE);
+
         $product = $this->model->create($input);
 
-
         if (!empty($input['photos'])) {
-            $this->uploadPhotos($input['photos'], $product);
-        }
-
-        //thu vien anh
-        if (!empty($input['medias_photos'])) {
-            $product->photos()->attach(
-                $input['medias_photos'], [
-                    'type' => $product->getTable(),
-                    'level' => 0,
-                ]
-            );
+            $this->uploadPhotos($input['photos'], $product->id);
         }
 
         if (!empty($input['category_id'])) {
@@ -116,20 +99,58 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
 
     public function update(array $input, $id)
     {
-        
+        $product = $this->model->findOrFail($id);
+
+        $input['is_new'] = empty($input['is_new']) ? 0 : 1;
+
+        $input['active'] = empty($input['active']) ? 0 : 1;
+
+        $input['start_date_promotion'] = !empty($input['start_date_promotion']) ? convertDatabaseTime($input['start_date_promotion'], PHP_DATE, DATABASE_DATE) : date(DATABASE_DATE);
+
+        $input['end_date_promotion'] = !empty($input['end_date_promotion']) ? convertDatabaseTime($input['end_date_promotion'], PHP_DATE, DATABASE_DATE) : date(DATABASE_DATE);
+
+        $product->update($input);
+
+        if (!empty($input['photos'])) {
+            $this->uploadPhotos($input['photos'], $product->id);
+        }
+
+        if (!empty($input['category_id'])) {
+            $product->categories()->sync($input['category_id']);
+        } else {
+            $product->categories()->detach();//neu chưa có 
+        }
+
+        if (!empty($input['metadata'])) {
+            $product->metaCreateOrUpdate($input['metadata']);
+        }
+
+        return $product;
     }
 
     public function destroy($id)
     {
-        
+        $product = $this->model->findOrFail($id);
+
+        //delete metadata
+        $product->meta()->delete();
+
+        // delete photos
+        $this->deletePhotos($product, [], true);
+
+        //delete
+        $product->delete();
     }
 
     private function uploadPhotos($files, $product_id, $level = 0)
     {
+
         $config = config('photos.product_photo');
 
         foreach ($files as $key => $value) {
+
             $info = $this->storePhoto($value, $config);
+
             $arr = [
                 'product_id' => $product_id,
                 'path' => $info['path'],
@@ -141,7 +162,22 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
         }
     }
 
+    private function deletePhotos($product, array $ids, $all = false)
+    {
+        if ($all) {
+            $photos = $product->photos;
+        } else {
+            $photos = $product->photos()->whereIn('product_photo.id', $ids)->get();
+        }
 
+        foreach ($photos as $photo) {
+            $arr = $photo->arrayPath(false);
+            foreach ($arr as $value) {
+                \Storage::delete($value);
+            }
+            $photo->delete();
+        }
+    }
 
 
 }

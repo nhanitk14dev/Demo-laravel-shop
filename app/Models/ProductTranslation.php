@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 
-class ProductsTranslation extends Model
+class ProductTranslation extends Model
 {
     use Sluggable;
 

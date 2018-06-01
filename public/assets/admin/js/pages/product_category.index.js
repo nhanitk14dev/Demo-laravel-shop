@@ -1,30 +1,44 @@
+var sortCategory = $('meta[name=linkSort]').attr('content');
+
 jQuery(function ($) {
-    var linkDatatable = $('meta[name=linkDatatable]').attr('content');
+    //Sắp xếp hình ảnh
+    var idSort = '.sortable-categories';
 
-    var _table = $("#datatable");
-
-    var _btn_submit = $("#btn_search");
-
-    var _datatable = _table.DataTable({
-        processing: true,
-        serverSide: true,
-        lengthMenu: [[10, 25, 50, 100, 200,-1], [10, 25, 100, 200, "All"]],
-        pageLength: 10,
-        searching: true,
-        ajax: {
-            url: linkDatatable
-            
+    $(idSort).sortable({
+        placeholder: "list-group-item",
+        helper: 'clone',
+        sort: function (e, ui) {
+            position = Number($(idSort + " > li:visible").index(ui.placeholder));
+            if (position == 0) position = 0;
+            else position = position + 1;
+            $(ui.placeholder).html("<div class='tree-name'> " + position + " </div>");
         },
-        columns: [
-            {data: 'id', name: 'id'},
-            {data: 'name', name: 'name'},
-            {data: 'action', name: 'action', orderable: false, searchable: false}
-        ]
-
+        update: function (event, ui) {
+            var positions = "";
+            $(idSort).children().each(function (i) {
+                var li = $(this);
+                positions += "" + li.attr("data-id") + '=' + i + '&';
+            });
+            var str_lenght = positions.length;
+            str_lenght = str_lenght - 1;
+            positions = positions.substring(0, str_lenght);
+            $.ajax({
+                type: "PUT",
+                url: sortCategory,
+                data: {positions: positions},
+                success: function (data) {
+                    console.log(positions);
+                }
+            });
+        },
+        start: function (event, ui) {
+            ui.item.startPos = ui.item.index();
+        },
+        stop: function (event, ui) {
+            console.log("Start position: " + ui.item.startPos);
+            console.log("New position: " + ui.item.index());
+        }
     });
 
-    _btn_submit.on('click', function (e) {
-        _datatable.draw();
-        e.preventDefault();
-    });
+    $(".sortable-categories").disableSelection();
 });
