@@ -35,12 +35,12 @@
         <p>{!! trans("admin_product.form.size") !!}</p>
         <div class="form-group form-float">
             <div class="form-line">
-                <select name="size_id" id="size_id" class="form-control">
-                    <option value="">---</option>
-                    <option>
-                        <li>M</li>
-                        <li>L</li>  
-                    </option>
+                <select name="size_id[]" id="size_id" class="form-control" multiple>
+                    @foreach($sizes as $size)
+                        <option value="">---</option>
+                        <option value="{!! $size->id !!} " {!! !empty($product) && in_array($size->id, $product_size) ? 'selected' : null !!}>{!! $size->name !!}</option>
+                    @endforeach
+
                 </select>
             </div>
         </div>
@@ -50,8 +50,11 @@
         <p>{!! trans("admin_product.form.color") !!}</p>
         <div class="form-group form-float">
             <div class="form-line">
-                <select name="color_id" id="color_id" class="form-control">
-                    <option value="">---</option>
+                <select name="color_id[]" id="color_id" class="form-control" multiple>
+                    @foreach($colors as $color)
+                        <option value="">---</option>
+                        <option value="{!! $color->id !!}" {!! !empty($product) && in_array($color->id, $product_color) ? 'selected' : null !!}>{!! $color->name !!}</option>
+                    @endforeach
                 </select>
             </div>
         </div>

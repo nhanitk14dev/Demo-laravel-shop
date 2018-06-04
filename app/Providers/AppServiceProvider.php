@@ -27,15 +27,13 @@ class AppServiceProvider extends ServiceProvider
         \Log::getMonolog()->popHandler();
         \Log::useDailyFiles(storage_path('/logs/laravel-').$user.'.log');
 
-        //chia sẻ dulieu = gán biến $view trên header
+        //chia sẻ loại sản phẩm trên menu
         View::composer(
             [
-                'frontend.layouts.header'
+                'frontend.layouts.header',
+                'frontend.layouts.sidebar' //bên phải menu
             ], CategoryComposer::class
         );
-
-        //chia sẻ dulieu = gán biến $view trên header
-        //view()->composer('*',"App\Http\ViewComposers\CategoryComposer");
 
         // Admin chia se login auth
         View::composer([

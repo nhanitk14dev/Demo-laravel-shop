@@ -75,7 +75,6 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
 
     public function store(array $input)
     {
-
         $input['is_new'] = empty($input['is_new']) ? 0 : 1;
         $input['active'] = empty($input['active']) ? 0 : 1;
 
@@ -89,8 +88,16 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
             $this->uploadPhotos($input['photos'], $product->id);
         }
 
-        if (!empty($input['category_id'])) {
+        if (!empty($input['category_id'])) { //1 mảng loại sản phẩm trong outTreeCategoryRadioCheckbox
             $product->categories()->attach($input['category_id']);
+        }
+
+        if (!empty($input['color_id'])) { 
+            $product->colors()->attach($input['color_id']);
+        }
+
+        if (!empty($input['size_id'])) { 
+            $product->sizes()->attach($input['size_id']);
         }
 
         return $product;
@@ -99,6 +106,7 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
 
     public function update(array $input, $id)
     {
+
         $product = $this->model->findOrFail($id);
 
         $input['is_new'] = empty($input['is_new']) ? 0 : 1;
@@ -111,11 +119,15 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
 
         $product->update($input);
 
+        if (!empty($input['delete_photos']) && is_array($input['delete_photos'])) {
+            $this->deletePhotos($product, $input['delete_photos'], false);//false ko cho xoa all
+        }
+
         if (!empty($input['photos'])) {
             $this->uploadPhotos($input['photos'], $product->id);
         }
 
-        if (!empty($input['category_id'])) {
+        if (!empty($input['category_id'])) { //1 mảng loại sản phẩm trong outTreeCategoryRadioCheckbox
             $product->categories()->sync($input['category_id']);
         } else {
             $product->categories()->detach();//neu chưa có 
@@ -167,6 +179,7 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
         if ($all) {
             $photos = $product->photos;
         } else {
+
             $photos = $product->photos()->whereIn('product_photo.id', $ids)->get();
         }
 
@@ -179,5 +192,31 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
         }
     }
 
+    //san-pham-moi-nhat & sp-khac
+    public function listProductNew($is_new = false, $limit = 0)
+    {
+        $model = $this->model->active()//dkien active sảnpham
+            ->with('categories')
+            ->withTranslation();
+        if ($is_new) {
+            $model->where('is_new', 1)->orderBy('is_new', 'desc');
+        }
+        else{
+            $model->where('is_new', 0);
+        }
+        /*$model->orderBy('is_top', 'desc')
+            ->orderBy('publish_at', 'desc');*/
+
+        if ($limit) {
+            return $model->limit($limit)
+                ->get();
+        }
+        return $model->paginate(6);
+    }
+
+    public function listProductPromotion()
+    {
+
+    }
 
 }

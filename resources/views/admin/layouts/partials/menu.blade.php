@@ -45,7 +45,11 @@
                         <span>{!! trans("admin_menu.dashboard") !!}</span>
                     </a>
                 </li>
-                <li class="{!! currentPageMenu(["*admin/products*"]) !!}">
+                <li class="{!! currentPageMenu(["
+                    *admin/products*",
+                    "*admin/sizes*",
+                    "*admin/colors*"
+                    ]) !!}">
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">dns</i>
                         <span>{!! trans("admin_menu.products") !!}</span>
@@ -65,7 +69,17 @@
                                 <span>{!! trans("admin_menu.categories") !!}</span>
                             </a>
                         </li>
-                        
+                        <li class="{!! currentPageMenu(["*admin/sizes*"]) !!}">
+                            <a href="{!! route("admin.size.index") !!}">
+                                <span>{!! trans("admin_menu.sizes") !!}</span>
+                            </a>
+                        </li>
+
+                        <li class="{!! currentPageMenu(["*admin/colors*"]) !!}">
+                            <a href="{!! route("admin.color.index") !!}">
+                                <span>{!! trans("admin_menu.colors") !!}</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 

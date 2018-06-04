@@ -1,36 +1,19 @@
 <div id="sidebar" class="span3">
-	<div class="well well-small"><a id="myCart" href="product_summary.html"><img src="/assets/themes/images/ico-cart.png" alt="cart">3 sản phẩm<span class="badge badge-warning pull-right">155.000 đ</span></a></div>
+	<div class="well well-small"><a id="myCart" href="product_summary.html"><img src="/assets/themes/images/ico-cart.png" alt="cart">3 {!! trans('f_cart.products') !!}<span class="badge badge-warning pull-right">155.000 đ</span></a></div>
 	<ul id="sideManu" class="nav nav-tabs nav-stacked">
-		<li class="subMenu open"><a> Điện tử & Máy Tính[230]</a>
-			<ul>
-				<li><a class="active" href="{{route('front.product.index')}}"><i class="icon-chevron-right"></i>Cameras (100) </a></li>
-				<li><a href="{{route('front.product.index')}}"><i class="icon-chevron-right"></i>Máy Tính, Tablets & laptop (30)</a></li>
-				<li><a href="{{route('front.product.index')}}"><i class="icon-chevron-right"></i>Di Động (80)</a></li>
-				<li><a href="{{route('front.product.index')}}"><i class="icon-chevron-right"></i>Thiết bị âm thanh (15)</a></li>
-			</ul>
-		</li>
-		<li class="subMenu"><a>Quần Áo [840] </a>
-			<ul style="display:none">
-				<li><a href="{{route('front.product.index')}}"><i class="icon-chevron-right"></i>Quần áo nữ (45)</a></li>
-				<li><a href="{{route('front.product.index')}}"><i class="icon-chevron-right"></i>Giày, dép nữ (8)</a></li>												
-				<li><a href="{{route('front.product.index')}}"><i class="icon-chevron-right"></i>Túi xách nữ (5)</a></li>	
-				<li><a href="{{route('front.product.index')}}"><i class="icon-chevron-right"></i>Quần áo nam (45)</a></li>
-				<li><a href="{{route('front.product.index')}}"><i class="icon-chevron-right"></i>Giày, dép nam (8)</a></li>												
-			</ul>
-		</li>
-		<li class="subMenu"><a>Thức ăn & rau quả [1000]</a>
-			<ul style="display:none">
-				<li><a href="{{route('front.product.index')}}"><i class="icon-chevron-right"></i>Trái cây & Fils (8)</a></li>												
-				<li><a href="{{route('front.product.index')}}"><i class="icon-chevron-right"></i>Rau xanh (5)</a></li>	
-				<li><a href="{{route('front.product.index')}}"><i class="icon-chevron-right"></i>Thức ăn sáng-trưa(45)</a></li>
-				<li><a href="{{route('front.product.index')}}"><i class="icon-chevron-right"></i>Thức ăn Chiều-Tối</a></li>												
-				<li><a href="{{route('front.product.index')}}"><i class="icon-chevron-right"></i>Rượu (5)</a></li>												
-				<li><a href="{{route('front.product.index')}}"><i class="icon-chevron-right"></i>Các loại hoa (3)</a></li>										
-			</ul>
-		</li>
-		<li><a href="{{route('front.product.index')}}">Sức Khỏe & Làm đẹp [18]</a></li>
-		<li><a href="{{route('front.product.index')}}">Thể Thao [58]</a></li>
-		<li><a href="{{route('front.product.index')}}">Truyện, Sách & Giải Trí [14]</a></li>
+		@foreach($composer_categories as $category)
+			<li class="subMenu open"><a> {!! $category->name !!}</a>
+				@if($category->children->count())
+					<ul>
+						@foreach($category->children as $rs)
+							<li>
+								<a class="active" href="{{route('front.product.index')}}"><i class="icon-chevron-right"></i>{!! $rs->name !!}</a>
+							</li>
+						@endforeach
+					</ul>
+				@endif
+			</li>
+		@endforeach
 	</ul>
 	<br/>
 	<div class="thumbnail">

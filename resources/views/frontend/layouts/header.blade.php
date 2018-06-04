@@ -22,15 +22,22 @@
 					<input id="srchFld" class="srchTxt" type="text" />
 					<select class="srchTxt">
 						<option>Tất cả</option>
-						<option>Quần Áo</option>
-						<option>Sức Khỏe & Làm đẹp</option>
-						<option>Thể Thao & Tin Tức</option>
-						<option>Giải Trí</option>
+						@foreach($composer_categories as $category)
+							<option value="{{ $category->id }}">{!! $category->name !!}</option>
+						@endforeach
 					</select> 
 					<button type="submit" id="submitButton" class="btn btn-primary">Go</button>
 				</form>
 				<ul id="topMenu" class="nav pull-right">
-					<li class=""><a href="{{ route('front.product.index') }}">{{ trans('f_menu.products') }}</a></li>
+					<li class="">
+						<a href="{{ route('front.product.index') }}">{{ trans('f_menu.products') }}</a>
+						<!-- <ul>
+							<li>aaaaa</li>
+							<li>aaaaa</li>
+							<li>aaaaa</li>
+							<li>aaaaa</li>
+						</ul> -->
+					</li>
 					<li class=""><a href="{{ route('front.about') }}">{{ trans('f_menu.about_us') }}</a></li>
 					<li class=""><a href="{{ route('front.contact') }}">{{ trans('f_menu.contact_us') }}</a></li>
 					<li class=""><a href="{{ route('front.faq') }}">FAQ</a></li>

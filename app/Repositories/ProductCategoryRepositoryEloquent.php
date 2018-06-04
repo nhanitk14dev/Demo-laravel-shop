@@ -56,22 +56,26 @@ class ProductCategoryRepositoryEloquent extends BaseRepository implements Produc
     }
 
     //3 cai nay can phai co de lay parent_id
-    public function getCategories($parent_id, $children = false)
+    public function getCategories($parent_id, $children = false, $is_display = -1)
     {
         $model = $this->model->select("*")
             ->where('parent_id', $parent_id);
-        /*if ($children) {
+        if ($children) {
+
             if ($is_display !== -1) {
                 $model->with(["children" => function ($q) use ($is_display) {
-                    //$q->where('is_display', $is_display);
+                    $q->where('is_display', $is_display);
                 }]);
+
+                
             } else {
                 $model->with(["children"]);
             }
-        }*/
-        /*if ($is_display !== -1) {
+        }
+        
+        if ($is_display !== -1) {
             $model->where('is_display', $is_display);
-        }*/
+        }
         $model->withTranslation();
 
         return $model->orderBy('level', 'asc')
@@ -146,7 +150,7 @@ class ProductCategoryRepositoryEloquent extends BaseRepository implements Produc
                 $string .= '<li>';
 
                 if ($type === 'checkbox') {
-                    $string .= '<input type="' . $type . '" class="chk-col-red" level="' . $rs->level . '" id="category-' . $rs->id . '" name="cate[]" ' . $checked . ' ' . $disabled . ' value="' . $rs->id . '" />';
+                    $string .= '<input type="' . $type . '" class="chk-col-red" level="' . $rs->level . '" id="category-' . $rs->id . '" name="category_id[]" ' . $checked . ' ' . $disabled . ' value="' . $rs->id . '" />';//dùng cho tạo sản phẩm category_id[]
                 } else {
                     $string .= '<input type="' . $type . '" class="with-gap radio-col-red" level="' . $rs->level . '" id="category-' . $rs->id . '" name="category_id" ' . $checked . ' ' . $disabled . ' value="' . $rs->id . '" />';
                 }

@@ -58,6 +58,25 @@ return [
         ]
     ],
 
+    "size" => [
+        "model" => "Size",
+        "permissions" => [
+            "admin.size.index" => "Size index",
+            "admin.size.create" => "Create size",
+            "admin.size.edit" => "Edit size",
+            "admin.size.destroy" => "Delete size"
+        ]
+    ],
+
+    "color" => [
+        "model" => "Color",
+        "permissions" => [
+            "admin.color.index" => "Color index",
+            "admin.color.create" => "Create color",
+            "admin.color.edit" => "Edit color",
+            "admin.color.destroy" => "Delete color"
+        ]
+    ],
     
     
 ];

@@ -17,140 +17,47 @@
 						<div class="row-fluid">
 							<div id="featured" class="carousel slide">
 								<div class="carousel-inner">
-									<div class="item active">
-										<ul class="thumbnails">
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/mayanh.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Tên sản phẩm</h5>
-														<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">222.000 đ</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/quanaonam.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Tên sản phẩm</h5>
-														<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">222.000 đ</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/quanaonam.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Tên sản phẩm</h5>
-														<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">222.000 đ</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/ao1.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Tên sản phẩm</h5>
-														<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">222.000 đ</span></h4>
-													</div>
-												</div>
-											</li>
-
-										</ul>
-									</div>
-									<div class="item">
-										<ul class="thumbnails">
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/quanaonam.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Tên sản phẩm</h5>
-														<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">222.000 đ</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/b4.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Tên sản phẩm</h5>
-														<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">222.000 đ</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/quanaonam1.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Tên sản phẩm</h5>
-														<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">222.000 đ</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/4.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Tên sản phẩm</h5>
-														<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">222.000 đ</span></h4>
-													</div>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<div class="item">
-										<ul class="thumbnails">
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/5.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Tên sản phẩm</h5>
-														<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">222.000 đ</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/quanaonam1.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Tên sản phẩm</h5>
-														<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">222.000 đ</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/7.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Tên sản phẩm</h5>
-														<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">222.000 đ</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/ao1.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Tên sản phẩm</h5>
-														<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">222.000 đ</span></h4>
-													</div>
-												</div>
-											</li>
-										</ul>
-									</div>
-
+									<!-- start-item-list -->
+									
+										<div class="item active">
+											<ul class="thumbnails">
+												@foreach($product_new as $key => $new)
+													@foreach($new->photos as $rs)
+														<li class="span3">
+															<div class="thumbnail">
+																<i class="tag"></i>
+																<a href="{{route('front.product.show')}}"><img src="storage/app/product/medium/{{$rs->file_name}}" alt=""></a>
+																<div class="caption">
+																	<h5>{!! $new->name !!}</h5>
+																	<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">{!! $new->unit_price !!} vnd</span></h4>
+																</div>
+															</div>
+															
+														</li>
+													@endforeach
+												@endforeach
+											</ul>
+										</div>
+										<div class="item">
+											<ul class="thumbnails">
+												@foreach($product_new as $key => $new)
+													@foreach($new->_photos as $rs)
+														<li class="span3">
+															<div class="thumbnail">
+																<i class="tag"></i>
+																<a href="{{route('front.product.show')}}"><img src="{{ $rs->arrayPath(true)['medium'] }}" alt=""></a>
+																<div class="caption">
+																	<h5>{!! $new->name !!}</h5>
+																	<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">{!! $new->unit_price !!} vnd</span></h4>
+																</div>
+															</div>
+														</li>
+													@endforeach
+												@endforeach
+											</ul>
+										</div>
+									
+									<!-- end-item-list -->
 								</div>
 								<a class="left carousel-control" href="#featured" data-slide="prev">‹</a>
 								<a class="right carousel-control" href="#featured" data-slide="next">›</a>
@@ -159,78 +66,20 @@
 					</div>
 					<h4>Các sản phẩm liên quan</h4>
 					<ul class="thumbnails">
-						<li class="span3">
-							<div class="thumbnail">
-								<a  href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/quanao.jpg" alt=""/></a>
-								<div class="caption">
-									<h5>Tên sản phẩm</h5>
-									<p> 
-										Mô tả sản phẩm 
-									</p>
-									<h4 style="text-align:center"><a class="btn" href="{{route('front.product.show')}}"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Thêm vào giỏ hàng<i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">222.000 đ</a></h4>
+						@foreach($product_other as $key => $other)
+							<li class="span3">
+								<div class="thumbnail">
+									<a  href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/quanao.jpg" alt=""/></a>
+									<div class="caption">
+										<h5>{!! $other->name !!}</h5>
+										<p> 
+											{!! $other->remark !!}
+										</p>
+										<h4 style="text-align:center"><a class="btn" href="{{route('front.product.show')}}"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Thêm vào giỏ hàng<i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">{!! $other->unit_price !!} vnđ</a></h4>
+									</div>
 								</div>
-							</div>
-						</li>
-						<li class="span3">
-							<div class="thumbnail">
-								<a  href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/7.jpg" alt=""/></a>
-								<div class="caption">
-									<h5>Tên sản phẩm</h5>
-									<p> 
-										Mô tả sản phẩm 
-									</p>
-									<h4 style="text-align:center"><a class="btn" href="{{route('front.product.show')}}"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Thêm vào giỏ hàng<i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">222.000 đ</a></h4>
-								</div>
-							</div>
-						</li>
-						<li class="span3">
-							<div class="thumbnail">
-								<a  href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/8.jpg" alt=""/></a>
-								<div class="caption">
-									<h5>Tên sản phẩm</h5>
-									<p> 
-										Mô tả sản phẩm 
-									</p>
-									<h4 style="text-align:center"><a class="btn" href="{{route('front.product.show')}}"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Thêm vào giỏ hàng<i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">222.000 đ</a></h4>
-								</div>
-							</div>
-						</li>
-						<li class="span3">
-							<div class="thumbnail">
-								<a  href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/9.jpg" alt=""/></a>
-								<div class="caption">
-									<h5>Tên sản phẩm</h5>
-									<p> 
-										Mô tả sản phẩm 
-									</p>
-									<h4 style="text-align:center"><a class="btn" href="{{route('front.product.show')}}"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Thêm vào giỏ hàng<i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">222.000 đ</a></h4>
-								</div>
-							</div>
-						</li>
-						<li class="span3">
-							<div class="thumbnail">
-								<a  href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/10.jpg" alt=""/></a>
-								<div class="caption">
-									<h5>Tên sản phẩm</h5>
-									<p> 
-										Mô tả sản phẩm 
-									</p>
-									<h4 style="text-align:center"><a class="btn" href="{{route('front.product.show')}}"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Thêm vào giỏ hàng<i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">222.000 đ</a></h4>
-								</div>
-							</div>
-						</li>
-						<!-- <li class="span3">
-							<div class="thumbnail">
-								<a  href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/11.jpg" alt=""/></a>
-								<div class="caption">
-									<h5>Tên sản phẩm</h5>
-									<p> 
-										Mô tả sản phẩm 
-									</p>
-									<h4 style="text-align:center"><a class="btn" href="{{route('front.product.show')}}"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Thêm vào giỏ hàng<i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">222.000 đ</a></h4>
-								</div>
-							</div>
-						</li> -->
+							</li>
+						@endforeach
 					</ul>	
 
 				</div>

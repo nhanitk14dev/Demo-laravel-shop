@@ -21,7 +21,9 @@ function(){
 	Route::get(LaravelLocalization::transRoute('routes.contact_us'), 'PageController@contact')->name("front.contact");
 
 	Route::get(LaravelLocalization::transRoute('routes.faq'), 'PageController@faq')->name("front.faq"); 
-	Route::get(LaravelLocalization::transRoute('routes.compare_product'), 'ProductController@compare')->name("front.compare"); 
+	Route::get(LaravelLocalization::transRoute('routes.compare_product'), 'ProductController@compare')->name("front.compare");
+
+	Route::get(LaravelLocalization::transRoute('routes.cart'), 'ShoppingCartController@viewCart')->name("front.cart");
 
 });
 

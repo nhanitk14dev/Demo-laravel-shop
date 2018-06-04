@@ -12,4 +12,6 @@ return [
     'page_by_slug' => '{slug}',
     'login' => 'login',
     'register' =>'register',
+
+    'cart' => 'cart'
 ];

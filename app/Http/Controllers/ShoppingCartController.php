@@ -17,7 +17,7 @@ class ShoppingCartController extends Controller
 	public function viewCart()
     {
         $carts = Cart::content();
-        return view('frontend.page.cart',compact('carts'));
+        return view('frontend.shoppingcart.viewcart',compact('carts'));
         
     }
     public function addItem( $id) 

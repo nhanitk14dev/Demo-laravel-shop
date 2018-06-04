@@ -132,12 +132,11 @@ function allowType(types, type) {
     }
 }
 
-// Size type: KB
 function allowSize(max_size, size) {
     max_size = parseInt(max_size);
     var result = new Array();
     if (size > max_size) {
-        var str = 'The file size must less than ' + Math.round(max_size) + ' KB';
+        var str = 'The file size must less than ' + Math.round(max_size / 1024) + ' MB';
         result[0] = false;
         result[1] = str;
         return result;
@@ -185,28 +184,6 @@ function callbackHandlePhotos(value, option) {
     return false;
 }
 
-function checkPhoneNumber(phone) {
-    if (!phone || (phone && (phone.length < 10 || phone.length >11 ))) {
-        return false;
-    }
-    var flag = false;
-    phone = phone.replace('(+84)', '0');
-    phone = phone.replace('+84', '0');
-    phone = phone.replace('0084', '0');
-    phone = phone.replace(/ /g, '');
-    var firstNumber = phone.substring(0, 2);
-    if ((firstNumber == '09' || firstNumber == '08') && phone.length == 10) {
-        if (phone.match(/^\d{10}/)) {
-            flag = true;
-        }
-    } else if (firstNumber == '01' && phone.length == 11) {
-        if (phone.match(/^\d{11}/)) {
-            flag = true;
-        }
-    }
-    return flag;
-}
-
 jQuery(function ($) {
     $("body").on("keypress keydown", ".noEnterSubmit", function (event) {
         if (event.which == 13) {
@@ -251,23 +228,21 @@ jQuery(function ($) {
         // Create a formdata object and add the files
         $.each(files, function (key, value) {
             var random = Math.random().toString(36).slice(2);
-            var size = value.size;
-            size = size ? size / 1024 : 0; // Convert to KB
+            var size = parseFloat(value.size / 1024);
             var type = value.type;
             //Check size
             var check = allowSize(MAX_IMAGE_UPLOAD_SIZE, size);
             if (!check[0]) {
                 _this.val(null);
-                toastr["warning"](check[1]);
+                toastr["error"](check[1]);
                 return false;
             }
             //Check extensions
             var ext = type.replace(/image\//g, "").toLowerCase();
-
             check = allowType(IMAGE_TYPE_ACCEPT, ext);
             if (!check[0]) {
                 _this.val(null);
-                toastr["warning"](check[1]);
+                toastr["error"](check[1]);
                 return false;
             }
             var option = {
@@ -321,7 +296,7 @@ jQuery(function ($) {
         event.preventDefault();
         var accept_type = $(this).attr("accept_type");
         var name = this.files && this.files.length ? this.files[0].name : '';
-        var size = name ? parseFloat(this.files[0].size / 1024) : null; // Convert to KB
+        var size = name ? parseFloat(this.files[0].size / 1024) : null;
 
         // Check size upload
         if (size) {
@@ -333,7 +308,7 @@ jQuery(function ($) {
                     return false;
                 }
             }
-            else if (accept_type == "file") {
+            else if(accept_type == "file"){
                 var check = allowSize(MAX_FILE_UPLOAD_SIZE, size);
                 if (!check[0]) {
                     $(this).val(null);
@@ -347,18 +322,4 @@ jQuery(function ($) {
         }
         $(this).closest('.wrap-input-file').find('.upload-file-info').html(name);
     })
-
-    $('body').on('change', '.checkbox-tick-all', function (event) {
-        event.stopPropagation();
-        event.preventDefault();
-        var _this = $(this);
-        var parent = _this.data('parent');
-        var _parent = _this.closest(parent);
-        if (_this.is(':checked')) {
-            _parent.find('input[type=checkbox]').prop('checked', true);
-        }
-        else {
-            _parent.find('input[type=checkbox]').prop('checked', false);
-        }
-    });
 });

@@ -15,5 +15,7 @@ return [
     'checkout'=> 'dat-hang',
     'about_us' => 'gioi-thieu',
     'faq' => 'faq',
-    'compare_product' => 'so-sanh-san-pham'
+    'compare_product' => 'so-sanh-san-pham',
+
+    'cart' => 'gio-hang'
 ];

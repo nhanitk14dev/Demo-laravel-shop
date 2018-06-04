@@ -44,4 +44,4 @@ ShopCake:
 
 //-----------tao database------------
 ktra 2table product,product_cateogies co chua---> product_category
-uploadPhoto -> Ok
+uploadPhoto -> Ok ---composer require intervention/image

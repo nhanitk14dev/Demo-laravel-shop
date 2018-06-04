@@ -1,9 +1,11 @@
 <ul id="sortable-photos" class="list-photos">
     @if(!empty($product))
         @foreach($product->_photos as $rs)
+
+      
             <li data-id="{{ $rs->id }}">
                 <div class="box-image">
-                    <img src="{{ $rs->arrayPath(true)["medium"] }}" alt="{{ $product->name }}">
+                    <img src="{{ $rs->arrayPath(true)['medium'] }}" alt="{{ $product->name }}">
                     <button type="button"
                             class="btn_delete_this"
                             data-parent ="li"

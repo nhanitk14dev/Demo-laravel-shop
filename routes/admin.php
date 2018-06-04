@@ -25,6 +25,10 @@ Route::group(
                 resourceAdmin('products', 'ProductController', 'product');
 
                 resourceAdmin('product-categories', 'ProductCategoryController', 'product_category', 'product.category');
+
+                resourceAdmin('sizes', 'SizeController', 'size');
+
+                resourceAdmin('colors', 'ColorController', 'color');
             });
         });
 

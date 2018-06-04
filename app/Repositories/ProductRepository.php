@@ -23,5 +23,10 @@ interface ProductRepository extends RepositoryInterface
 
     public function destroy($id);
 
+    public function listProductNew($is_new = false, $limit = 0);
+
+
+    public function listProductPromotion();
+
     
 }
