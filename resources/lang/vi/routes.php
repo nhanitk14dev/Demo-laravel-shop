@@ -17,5 +17,6 @@ return [
     'faq' => 'faq',
     'compare_product' => 'so-sanh-san-pham',
 
-    'cart' => 'gio-hang'
+    'cart' => 'gio-hang',
+    
 ];

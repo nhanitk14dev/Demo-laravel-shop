@@ -18,45 +18,47 @@
 							<div id="featured" class="carousel slide">
 								<div class="carousel-inner">
 									<!-- start-item-list -->
-									
-										<div class="item active">
-											<ul class="thumbnails">
-												@foreach($product_new as $key => $new)
-													@foreach($new->photos as $rs)
-														<li class="span3">
-															<div class="thumbnail">
-																<i class="tag"></i>
-																<a href="{{route('front.product.show')}}"><img src="storage/app/product/medium/{{$rs->file_name}}" alt=""></a>
-																<div class="caption">
-																	<h5>{!! $new->name !!}</h5>
-																	<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">{!! $new->unit_price !!} vnd</span></h4>
-																</div>
-															</div>
-															
-														</li>
-													@endforeach
-												@endforeach
-											</ul>
-										</div>
-										<div class="item">
-											<ul class="thumbnails">
-												@foreach($product_new as $key => $new)
-													@foreach($new->_photos as $rs)
-														<li class="span3">
-															<div class="thumbnail">
-																<i class="tag"></i>
-																<a href="{{route('front.product.show')}}"><img src="{{ $rs->arrayPath(true)['medium'] }}" alt=""></a>
-																<div class="caption">
-																	<h5>{!! $new->name !!}</h5>
-																	<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">{!! $new->unit_price !!} vnd</span></h4>
-																</div>
-															</div>
-														</li>
-													@endforeach
-												@endforeach
-											</ul>
-										</div>
-									
+									<div class="item active">
+										<ul class="thumbnails">
+											@foreach($product_new as $key => $new)
+												<li class="span3">
+													<div class="thumbnail">
+														<i class="tag"></i>
+														<a href="{{route('front.product.show')}}">
+															<img src="{{$new->photo_path_medium }}" alt="">
+														</a>
+														<div class="caption">
+															<h5>{!! $new->name !!}</h5>
+															<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">{!! $new->unit_price !!} vnd</span></h4>
+														</div>
+													</div>
+													
+												</li>
+												@break($key===3)
+											@endforeach
+										</ul>
+									</div>
+									<div class="item">
+										<ul class="thumbnails">
+											@foreach($product_new as $key => $new)
+
+												@continue($key<=3) <!-- đã giới hạn lấy 8 nên loại nhỏ hơn 3 -->
+
+												<li class="span3">
+													<div class="thumbnail">
+														<i class="tag"></i>
+														<a href="" alt="">
+															<img src="{{$new->photo_path_medium }}" alt="">
+														</a>
+														<div class="caption">
+															<h5>{!! $new->name !!}</h5>
+															<h4><a class="btn" href="{{route('front.product.show')}}"><i class="icon-zoom-in"></i></a> <span class="pull-right">{!! $new->unit_price !!} vnd</span></h4>
+														</div>
+													</div>
+												</li>
+											@endforeach
+										</ul>
+									</div>
 									<!-- end-item-list -->
 								</div>
 								<a class="left carousel-control" href="#featured" data-slide="prev">‹</a>
@@ -66,24 +68,27 @@
 					</div>
 					<h4>Các sản phẩm liên quan</h4>
 					<ul class="thumbnails">
-						@foreach($product_other as $key => $other)
+						@foreach($product_other as $other)
 							<li class="span3">
 								<div class="thumbnail">
-									<a  href="{{route('front.product.show')}}"><img src="/assets/themes/images/products/quanao.jpg" alt=""/></a>
+									<a  href="{{route('front.product.show')}}">
+										<img src="{{$other->photo_path_medium }}" alt=""/>
+									</a>
 									<div class="caption">
 										<h5>{!! $other->name !!}</h5>
 										<p> 
 											{!! $other->remark !!}
 										</p>
-										<h4 style="text-align:center"><a class="btn" href="{{route('front.product.show')}}"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Thêm vào giỏ hàng<i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">{!! $other->unit_price !!} vnđ</a></h4>
+										<h4 style="text-align:center"><a class="btn" href="{{route('front.product.show')}}"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Thêm vào giỏ hàng<i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">{!! $other->unit_price !!} đ</a></h4>
 									</div>
 								</div>
 							</li>
 						@endforeach
-					</ul>	
-
+					</ul>
 				</div>
+
 			</div>
+
 		</div>
 	</div>
 	

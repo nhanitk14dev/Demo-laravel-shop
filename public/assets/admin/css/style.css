@@ -11186,3 +11186,7 @@ label.error {
   right: 0;
   height: 500px;
 }
+
+.wrap-pagination {
+    text-align: center;
+}

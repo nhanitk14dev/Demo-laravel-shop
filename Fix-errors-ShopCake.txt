@@ -45,3 +45,10 @@ ShopCake:
 //-----------tao database------------
 ktra 2table product,product_cateogies co chua---> product_category
 uploadPhoto -> Ok ---composer require intervention/image
+
+//--------UPLOAD PHOTO----------------
+config/filesystem.php -- 'default' => env('FILESYSTEM_DRIVER', 'public')
+
+sử dụng 1 hình ảnh cần relationship:
+   -  function photo => hasOne... 
+   - bảng ProductPhoto: cần thêm PhotoArrayPathTrait, trong đó có getImgMediumAttribute,..

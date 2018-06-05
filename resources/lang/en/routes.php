@@ -13,5 +13,5 @@ return [
     'login' => 'login',
     'register' =>'register',
 
-    'cart' => 'cart'
+    'cart' => 'cart',
 ];

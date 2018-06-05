@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 use App\Repositories\ProductCategoryRepository;
-use App\Repositories\ProductRepository;
 
 class ProductController extends Controller
 {
@@ -21,7 +20,11 @@ class ProductController extends Controller
 
     public function index()
     {
-    	return view('frontend.product.index');
+        //$slide = Slide::all();
+
+        $products = $this->product->listProductNew($is_new = false);
+
+    	return view('frontend.product.index', compact('products'));
     }
 
     public function show()

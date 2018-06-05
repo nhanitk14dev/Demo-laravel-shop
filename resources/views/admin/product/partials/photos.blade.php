@@ -1,8 +1,6 @@
 <ul id="sortable-photos" class="list-photos">
     @if(!empty($product))
         @foreach($product->_photos as $rs)
-
-      
             <li data-id="{{ $rs->id }}">
                 <div class="box-image">
                     <img src="{{ $rs->arrayPath(true)['medium'] }}" alt="{{ $product->name }}">

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProductPhoto extends Model
 {
-    use PhotoArrayPathTrait;
+    use PhotoArrayPathTrait; 
 
     protected $table = 'product_photo';
 

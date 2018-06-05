@@ -57,16 +57,9 @@ class Product extends Model implements Transformable //dung de da ngon ngu
 
     public function getPhotoPathMediumAttribute()
     {
-        return $this->photo && $this->photo ? $this->photo->img_medium : DEFAULT_IMAGE;
+        return $this->photo ? $this->photo->img_medium : DEFAULT_IMAGE;
     }
     
-
-    public function getPhotoPathSmallAttribute()
-    {
-        return $this->photo && $this->photo->media ? $this->photo->media->img_small : DEFAULT_IMAGE;
-    }
-
-
     public function bill_detail(){
     	return $this->hasMany('App\BillDetail','id_product','id');
     }
