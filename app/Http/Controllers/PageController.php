@@ -14,6 +14,7 @@ class PageController extends Controller
 {
 
     protected $category;
+    protected $product;
 
     public function __construct( ProductRepository $product, 
             ProductCategoryRepository $category)
@@ -22,9 +23,20 @@ class PageController extends Controller
         $this->category = $category;
     }
 
-    public function pagehome()
+    public function pagehome($is_new = false, $limit = 0)
     { 
-    	return view('frontend.page.trangchu');
+        //$slide = Slide::all();
+        $product_new = $this->product->listProductNew($is_new = true);//true = 1
+
+        $product_promotion = $this->product->listProductPromotion();
+
+        $product_other = $this->product->listProductNew($is_new = false);
+
+    	return view('frontend.page.trangchu', compact(
+            'product_new', 
+            'product_promotion',
+            'product_other'
+        ));
     }
 
     public function about()

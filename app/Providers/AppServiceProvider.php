@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    
+
     public function boot()
     {
         $user = exec('whoami');
@@ -27,15 +27,13 @@ class AppServiceProvider extends ServiceProvider
         \Log::getMonolog()->popHandler();
         \Log::useDailyFiles(storage_path('/logs/laravel-').$user.'.log');
 
-        //chia sẻ dulieu = gán biến $view trên header
+        //chia sẻ loại sản phẩm trên menu
         View::composer(
             [
-                'frontend.layouts.header'
+                'frontend.layouts.header',
+                'frontend.layouts.sidebar' //bên phải menu
             ], CategoryComposer::class
         );
-
-        //chia sẻ dulieu = gán biến $view trên header
-        //view()->composer('*',"App\Http\ViewComposers\CategoryComposer");
 
         // Admin chia se login auth
         View::composer([
@@ -47,13 +45,19 @@ class AppServiceProvider extends ServiceProvider
         });
 
 
-        //chia se locale da ngon ngu 
+        //chia se locale da ngon ngu
         View::composer('*', function ($view){
             $view->with('composer_locale', \App::getLocale());
-        }); 
-        
-        Schema::defaultStringLength(191); 
-        
+            //cart
+            // if(Session::has('cart')){
+            //     $oldCart = Session::get('cart');
+            //     $cart = new Cart($oldCart);
+            //     $view->with(['cart'=>Session::get('cart'),'product_cart'=>$cart->items,'totalPrice'=>$cart->Subtotal(),'totalQty'=>$cart->qty]);
+            // }
+        });
+
+        Schema::defaultStringLength(191);
+
     }
 
     /**

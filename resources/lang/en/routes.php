@@ -1,10 +1,10 @@
 <?php
 return [
-    
-    'product' => 'products',
+
+    'product_index' => 'products',
     'product_category' => 'products/category/{category_slug}',
-    'product_show' => 'products/category',
-    
+
+
     // custom page
     'home' => '/en',
     'about_us' => 'about-us',
@@ -12,4 +12,10 @@ return [
     'page_by_slug' => '{slug}',
     'login' => 'login',
     'register' =>'register',
+    'checkout' => 'checkout',
+    'cart' => 'cart',
+    'product' => 'product',
+    'product_show' => 'product/{slug}',
+
+    'faqs' => 'faqs'
 ];

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="15" height="15" viewBox="0 0 15 15">
+  <defs>
+    <style>
+      .cls-1 {
+        filter: url(#gradient-overlay-1);
+      }
+
+      .cls-1, .cls-2 {
+        font-size: 14px;
+      }
+
+      .cls-2 {
+        text-anchor: middle;
+        font-family: "ElegantIcons";
+        text-transform: uppercase;
+      }
+    </style>
+
+    <filter id="gradient-overlay-1" filterUnits="userSpaceOnUse">
+      <feImage x="0" y="0" width="15" height="15" preserveAspectRatio="none" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTUiIGhlaWdodD0iMTUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIyLjI0OCIgeTE9IjE1IiB4Mj0iMTIuNzUyIj4KICA8c3RvcCBvZmZzZXQ9IjAuMTI1IiBzdG9wLWNvbG9yPSIjZmVkYTc1Ii8+CiAgPHN0b3Agb2Zmc2V0PSIwLjMxMyIgc3RvcC1jb2xvcj0iI2ZhN2UxZSIvPgogIDxzdG9wIG9mZnNldD0iMC41IiBzdG9wLWNvbG9yPSIjZDYyOTc2Ii8+CiAgPHN0b3Agb2Zmc2V0PSIwLjY4OCIgc3RvcC1jb2xvcj0iIzk2MmZiZiIvPgogIDxzdG9wIG9mZnNldD0iMC44NzUiIHN0b3AtY29sb3I9IiM0ZjViZDUiLz4KPC9saW5lYXJHcmFkaWVudD4KPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIvPjwvc3ZnPg=="/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+      <feBlend in2="SourceGraphic" result="gradientFill"/>
+    </filter>
+  </defs>
+  <text x="7" y="14" class="cls-1"><tspan x="7" class="cls-2"></tspan></text>
+</svg>

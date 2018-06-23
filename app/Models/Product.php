@@ -36,8 +36,19 @@ class Product extends Model implements Transformable //dung de da ngon ngu
     
     //translate
     public $translatedAttributes = [
-        'name'
+        'name',
+        'slug'
     ];
+    
+    public function scopeActive($query)
+    {
+        return $query->where('active', 1);
+    }
+
+    public function scopeIsNew($query)
+    {
+        return $query->where('is_new', 1);
+    }
 
     public function product_category()
     {
@@ -46,16 +57,19 @@ class Product extends Model implements Transformable //dung de da ngon ngu
 
     public function getPhotoPathMediumAttribute()
     {
-        return $this->photo && $this->photo->media ? $this->photo->media->img_medium : DEFAULT_IMAGE;
+        return $this->photo ? $this->photo->img_medium : DEFAULT_IMAGE;
     }
-    
 
     public function getPhotoPathSmallAttribute()
     {
-        return $this->photo && $this->photo->media ? $this->photo->media->img_small : DEFAULT_IMAGE;
+        return $this->photo ? $this->photo->img_small : DEFAULT_IMAGE;
     }
 
-
+    public function getPhotoPathLargeAttribute()
+    {
+        return $this->photo ? $this->photo->img_large : DEFAULT_IMAGE;
+    }
+    
     public function bill_detail(){
     	return $this->hasMany('App\BillDetail','id_product','id');
     }
@@ -64,25 +78,30 @@ class Product extends Model implements Transformable //dung de da ngon ngu
     {
         return $this->belongsToMany(ProductCategory::class, "product_category", "product_id", "category_id");
     }
-   
-    public function photo()
+
+    public function photo() //lấy 1 hình
     {
         return $this->hasOne(ProductPhoto::class, 'product_id')
             ->orderBy('level', 'asc')
             ->orderBy('position', 'asc');
     }
 
-    public function photos()
-    {
-        return $this->hasMany(ProductPhoto::class, 'product_id')
-            ->orderBy('level', 'asc')
-            ->orderBy('position', 'asc');
-    }
-
-    public function _photos()
+    public function _photos()//dùng để show trong views lấy ra nhiều hình
     {
         return $this->hasMany(ProductPhoto::class, 'product_id')->where(function ($q) {
             return $q->where('level', 0);
         })->orderBy('position', 'asc');
     }
+
+    public function colors()//1 spham thuộc nhiều màu:xanh,đỏ,vàng...
+    {
+        return $this->belongsToMany(Color::class, "product_color", "product_id", "color_id");
+    }
+
+    public function sizes()
+    {
+        return $this->belongsToMany(Size::class, "product_size", "product_id", "size_id");
+    }
+
+
 }

@@ -15,6 +15,12 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        View::composer('*', function ($view) {
+            $locales = \LaravelLocalization::getSupportedLocales();
+            $view->with('composer_locales', $locales);
+            $view->with('composer_locale', \App::getLocale());
+        });
+
         // Admin
         View::composer([
             'admin.layouts.partials.menu',
@@ -23,10 +29,6 @@ class ComposerServiceProvider extends ServiceProvider
             $arr = \Auth::user()->getPermissions()->pluck('slug')->toArray();
             $view->with('composer_auth_permissions', $arr);
         });
-
-        /*View::composer('*', function ($view){
-            $view->with('composer_locale', \App::getLocale());
-        });*/
     }
 
     /**

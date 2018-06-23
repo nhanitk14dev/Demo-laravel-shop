@@ -3,7 +3,7 @@
         <p>{!! trans("admin_product.form.categories") !!}</p>
         <div class="form-group">
             <div class="list-tree">
-               {!! $out_put_categories !!}
+              {!! $out_put_categories !!}
             </div>
         </div>
     </div>

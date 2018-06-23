@@ -1,7 +1,4 @@
 jQuery(function ($) {
-    $('#projects').select2({
-        placeholder: "---"
-    });
 
     $('#size_id').select2({
         placeholder: "---"

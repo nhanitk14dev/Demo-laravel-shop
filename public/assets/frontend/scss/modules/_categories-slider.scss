@@ -1,0 +1,120 @@
+// Product detail - Categories slider
+.categories-slider {
+  @media (max-width: 480px) {
+      margin: 25px 0px;
+  }
+  .slick-next, .slick-prev {
+      transition: 200ms ease-in-out;
+      -moz-transition: 200ms ease-in-out;
+      -webkit-transition: 200ms ease-in-out;
+      -o-transition: 200ms ease-in-out;
+      width: 67px;
+      height: 134px;
+  }
+  .slick-next {        
+      background: url(../images/icon-slick-next-cat.png) center center no-repeat !important;
+      right: 0px;
+      &::before {
+          content: "";
+      }
+      &:hover {
+          background: url(../images/icon-slick-next-cat.png) center center no-repeat !important;
+      }     
+  }
+  .slick-prev {
+      background: url(../images/icon-slick-prev-cat.png) center center no-repeat !important;
+      left: 0px;
+      &::before {
+          content: "";
+      }
+      &:hover {
+          background: url(../images/icon-slick-prev-cat.png) center center no-repeat !important;
+      }
+  }
+  .slick-list {
+      z-index: -1;
+  }
+  .slick-slide {
+      text-align: center;
+      margin: 0px 10px;
+      figure {
+          margin-bottom: 10px;
+      }
+      p {
+          font-family: Helvetica Neue Light;
+          font-size: 12px;
+      }
+  }
+}
+
+@media (min-width: 1280px) {
+  // Product detail - Categories slider
+  .categories-slider {
+      .slick-slide {
+          width: 80px;
+          height: 134px;
+      }
+  }
+}
+@media (min-width: 1200px) and (max-width: 1280px) {
+  // Product detail - Categories slider
+  .categories-slider {
+      .slick-slide {
+          width: 80px;
+          height: 134px;
+      }
+  }
+}
+
+/* lg */ 
+@media (min-width: 1200px) {
+  // Product detail - Categories slider
+  .categories-slider {
+      .slick-slide {
+          width: 80px;
+          height: 134px;
+      }
+  }  
+}
+
+/* md */
+@media (min-width: 992px) and (max-width: 1199px) {
+  // Product detail - Categories slider
+  .categories-slider {
+      .slick-slide {
+          width: 80px;
+          height: auto;
+      }
+  }
+}
+
+/* sm */
+@media (min-width: 768px) and (max-width: 991px) {
+  // Product detail - Categories slider
+  .categories-slider {
+      .slick-slide {
+          width: 80px;
+          height: auto;
+      }
+  }
+}
+
+/* xs */
+@media (max-width: 767px) {
+  // Product detail - Categories slider
+  .categories-slider {
+      .slick-slide {
+          height: auto ;
+      }
+  }
+}
+
+/* XS Portrait */
+@media (max-width: 480px) {
+  // Product detail - Categories slider
+  .categories-slider {
+      .slick-slide {
+          height: auto ;
+      }
+  }
+}

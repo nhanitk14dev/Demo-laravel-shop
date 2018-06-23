@@ -1,0 +1,250 @@
+.gallery-banner {
+    .main__banner-img {
+        img {
+            opacity: 1 !important;
+        }
+    }
+}
+
+.filter-box-gallery {
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 15px;
+}
+
+.panel__head {
+    .block {
+        padding: 50px 30px 42px;
+        .block--title {
+            margin: 0px ;
+        } 
+    }
+}
+
+.gallery__tabs {
+    text-align: center;
+    border-bottom: none;
+    li {
+        float: none;
+        display: inline-block;
+        margin-left: 0px;
+        border-bottom: 1px solid transparent;
+        width: 159px;
+        .icon-gal-tab {
+            width: 48px;
+            height: 48px;
+            display: block;
+            margin: 0 auto;
+            &.ceramic {
+                background: url(../images/icon-ceramic-gray.png) center center no-repeat;                
+            }
+            &.porcelain {
+                background: url(../images/icon-porcelain-gray.png) center center no-repeat;                
+            }
+            &.cotto {
+                background: url(../images/icon-cotto-gray.png) center center no-repeat;                
+            }
+            &.wall {
+                background: url(../images/icon-wall-gray.png) center center no-repeat;                
+            }
+            &.floor {
+                background: url(../images/icon-floor-gray.png) center center no-repeat;                
+            }
+            &.styles {
+                background: url(../images/icon-styles-gray.png) center center no-repeat;                
+            }
+        }
+        .tab--title {
+            display: block;
+            font-family: Helvetica Neue Light;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+        &.active {
+            border-bottom: 1px solid $color-brand;
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 3.5px 4px 3.5px;
+                border-color: transparent transparent $color-brand transparent;
+            }
+            .ceramic {
+                background: url(../images/icon-ceramic-red.png) center center no-repeat;
+            }
+            .porcelain {
+                background: url(../images/icon-porcelain-red.png) center center no-repeat;                
+            }
+            .cotto {
+                background: url(../images/icon-cotto-red.png) center center no-repeat;                
+            }
+            .wall {
+                background: url(../images/icon-wall-red.png) center center no-repeat;                
+            }
+            .floor {
+                background: url(../images/icon-floor-red.png) center center no-repeat;                
+            }
+            .styles {
+                background: url(../images/icon-styles-red.png) center center no-repeat;                
+            }
+            .tab--title {
+                color: $color-brand;
+            }       
+            a {
+                border: none;
+                border-color: transparent;
+                &:hover {
+                    border: none !important;
+                }
+                &:active, &:focus, &:visited {
+                    border: none;
+                }
+            }     
+        }
+        &:hover {
+            border-bottom: 1px solid $color-brand;
+            .ceramic {
+                background: url(../images/icon-ceramic-red.png) center center no-repeat;
+            }
+            .porcelain {
+                background: url(../images/icon-porcelain-red.png) center center no-repeat;                
+            }
+            .cotto {
+                background: url(../images/icon-cotto-red.png) center center no-repeat;                
+            }
+            .wall {
+                background: url(../images/icon-wall-red.png) center center no-repeat;                
+            }
+            .floor {
+                background: url(../images/icon-floor-red.png) center center no-repeat;                
+            }
+            .styles {
+                background: url(../images/icon-styles-red.png) center center no-repeat;                
+            }
+            a {
+                color: $color-brand;
+            }
+        }
+        a {
+            border: none;
+            padding: 0px;
+            transition: 0ms;
+            -moz-transition: 0ms;
+            -webkit-transition: 0ms;
+            -o-transition: 0ms;
+            &:hover {
+                border: none !important;
+                outline: none;
+                border-color: transparent;
+            }
+            &:active, &:focus, &:visited {
+                border: none;
+            }
+        }
+    }
+}
+
+.link_to_product {
+    width: 90%;
+    height: 40px;
+    margin: 0px auto;
+    z-index: 1;
+    position: relative;
+    background: rgba(169, 49, 51, 0.7);
+    h2 {
+        margin: 0px;
+        .link {
+            color: #fff;
+            display: block;
+            line-height: 40px;
+            cursor: pointer;
+        }
+    }
+}
+
+/* ===================== RESPONSIVE ==================== */
+/* lg */ 
+@media (max-width: 991px) {
+    .gallery__tabs {
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        li {
+            width: 20%;
+            margin: 0;
+            padding: 0;
+            float: left;
+            a {
+                display: block;
+                padding: 30px 10px;
+                .tab--title {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+/* xs */
+@media (max-width: 767px) {
+    .filter-box-gallery {
+        .panel__head {
+            background: transparent;
+            margin-top: -72px;
+            .block {padding: 0;}
+            .block--title {
+                margin: 0 0 12px;
+                .block--title-color {
+                    color: #fff;
+                }
+            }
+        }
+        .gallery__tabs li {
+            a {
+                padding: 20px 10px;
+                .tab--title {
+                    min-height: 42px;
+                }
+            }
+        }
+    }
+}
+
+/* XS Portrait */
+@media (max-width: 480px) {
+    .filter-box-gallery {
+        .gallery__tabs li {
+            a {
+                padding: 14px 5px;
+                .img-tab-icon {
+                    height: 26px;
+                }
+                .tab--title {
+                    min-height: 32px;
+                    font-size: 14px;
+                    line-height: 1.2;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 340px) {
+    .filter-box-gallery {
+        .gallery__tabs li {
+            a {
+                padding: 12px 5px;
+                .img-tab-icon {
+                    height: 26px;
+                }
+                .tab--title {
+                    min-height: 28px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

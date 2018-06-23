@@ -29,5 +29,8 @@ return [
     'scan' => 'Quét',
     'add_media_to_list' =>'Thêm vào danh sách',
     'filter' => 'Lọc sản phẩm',
-    'add' =>'Thêm'
+    'add' =>'Thêm',
+    'subcribe' => 'Mô tả',
+    'add_cart' => 'Thêm giỏ hàng',
+    'zoom' => 'Phóng to'
 ];

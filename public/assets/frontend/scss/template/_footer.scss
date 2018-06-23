@@ -1,0 +1,294 @@
+
+
+.fc-bottom {
+    .fc-bottom__col {
+        width: 11%;        
+        float:  left;
+        .fc-bottom__item {
+            height: 172px;
+            margin: 65px 0px 0px 0px;
+            background: url(../images/line-bottom.png) no-repeat top left;       
+            .fc-bottom__item--title {
+                padding:  0px 10px 0px 18px;
+                font-family: Helvetica Neue Medium;
+                letter-spacing: 0px;
+                font-size: 15px;
+                font-weight: bold;
+            }
+            .fc-bottom__item--list {
+                padding:  0px 10px 0px 18px;
+                font-family: Helvetica Neue Light, sans-serif;
+                font-size: 13px;
+                li {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        &:first-child {
+            .fc-bottom__item--title {
+                a {
+                    color: $color-brand;
+                }
+               
+            }
+        }
+    }
+}
+
+
+.fc-footer {
+    @media (max-width: 767px) {
+        .top__list {        
+            text-align: center;
+            img {
+                margin-top: -10px;
+            }
+        }
+    }
+    .fc-footer__content {
+        font-family: Helvetica Neue Light, sans-serif;
+        text-align: center;
+        color: #999999;
+        letter-spacing: 2px;
+    }    
+    .container {
+        padding: 35px 0 25px;
+    }
+    .fc-footer__bg {
+        height: 8px;
+        background: $color-brand;
+        .fc-footer__bg-gold {
+            background: url(../images/footer-bg.png) top right no-repeat;
+            height: 8px;
+        }
+    }
+}
+
+.icon-instagram {
+    @include icon_base(23px,23px);
+    background: url(../images/icon-instagram.svg) center center no-repeat;
+    background-size: 23px;
+}
+
+// subscribable -------
+
+$bottom: 150px;
+$pFontSize: 15px;
+$pPadding: 13px 0 13px 20px;
+$pFontFamily: Helvetica Neue;
+$pFontWeight: bold;
+$pColor: #fff;
+$pRadius: 4px 0 0 4px;
+$pIndex: 100;
+$pTranslate: 200px;
+
+.about_page {
+    .subscribable {
+        position: fixed;
+        bottom: 80px;
+        right: 0;
+    }
+    .fb-chat-live {
+        position: fixed;
+        bottom: 20px;
+        right: 0; 
+    }
+    .fb-wrap {
+        bottom: 70px;
+    }
+}
+.subscribable {
+    position: fixed;
+    bottom: $bottom + 60px;
+    right: 0;
+    width: 250px;
+    z-index: $pIndex;
+    @include translate($pTranslate ,0);   
+    @include transition(300ms ease-in-out); 
+    .subscribable__title {
+        background: $color-brand url(../images/bg-popup.jpg) top left repeat-x;
+        padding: $pPadding;
+        font-family: $pFontFamily;
+        font-weight: $pFontWeight;
+        color: $pColor;
+        border-radius: $pRadius;
+        font-size: $pFontSize;
+        text-transform: uppercase;
+        cursor: pointer;
+        @include transition(300ms ease-in-out); 
+        .social_rss {
+            margin-right: 14px;
+        }
+    }
+    .subscribable__content {
+        padding: 15px;
+        border-left: 1px solid #ebebeb;
+        border-top: 1px solid #ebebeb;
+        background: #fff;
+        position: absolute;
+        width: 100%;
+        left: 100px;
+        top: -170px;
+        visibility: hidden;
+        @include opacity(0);
+        @include transition(300ms ease-in-out); 
+        .form-group {
+            position: relative;
+            margin-bottom: 10px;
+            .subscribable-icon {
+                position: absolute;
+                top: 9px;
+                right: 15px;
+                font-size: 16px;
+            }
+        }
+        .btn {
+            margin-top: 10px;
+        }
+    }
+
+    &.active {        
+        z-index: $pIndex + 1;
+        @include translate(0,0);
+        .subscribable__title {
+            border-radius: 0 0 0 4px;
+        }
+        .subscribable__content  {
+            left: 0px;
+            visibility: visible;
+            @include opacity(1);
+        }
+    }
+}
+
+// Facebook chat
+.fb-close {
+    // font-family: arial, helvetica;
+    // background: $color-brand;
+    // font-size: 14px;
+    // font-weight: bold;
+    // color: #fff;
+    // display: inline-block;
+    // height: 25px;
+    // line-height: 25px;
+    // position: absolute;
+    // right: 0;
+    // text-align: center;
+    // top: 2px;
+    // width: 25px;
+    // z-index: 99999999;
+    display: none;
+}
+
+.fb-close:hover {
+    cursor: pointer;
+}
+
+.fb-chat-live {
+    position: fixed;
+    z-index: $pIndex;
+    border:none;
+    bottom: $bottom;
+    right: 0;    
+    width: 250px;
+    cursor: pointer;
+    @include translate($pTranslate ,0);   
+    @include transition(300ms ease-in-out); 
+    p {
+        background: $color-brand url(../images/bg-popup.jpg) top left repeat-x;
+        padding: $pPadding;
+        font-family: $pFontFamily;
+        font-weight: $pFontWeight;
+        color: $pColor;
+        border-radius: $pRadius;
+        font-size: $pFontSize;
+        text-transform: uppercase;
+        cursor: pointer;
+        @include transition(300ms ease-in-out); 
+        margin: 0;    
+        i {
+            margin-right: 14px;
+            font-size: (20/14)*1em;
+            float: left;
+            line-height: 1;
+            position: relative;
+            top: 2px;
+            left: -2px;
+        }
+        a {
+            color: #fff;
+            margin: 0;
+            display: inline-block;
+        }
+        img {
+           display: none;
+        }
+    }
+
+    &.active {
+        @include translate(0,0);
+        p {
+            border-radius: 0 0 0 4px;
+        }
+    }
+}
+.fb-wrap {
+    position: fixed;
+    width: 250px;
+    height: 400px;
+    z-index: $pIndex;
+    right: 0;
+    bottom: $bottom + 50px;
+    display: block;
+    visibility: hidden;
+    @include opacity(0);
+    @include translate($pTranslate ,0);     
+    @include transition(300ms ease-in-out); 
+    .fb-page {
+        position: relative;
+        z-index: 9999;
+        right: 0px;
+        bottom: 0px;
+        iframe {
+            visibility: inherit !important;
+        }
+    }
+    &.active {
+        @include translate(0,0);
+        visibility: visible;
+        @include opacity(1);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    $bottom: 120px;
+    $pFontSize: 12px;
+    $pPadding: 8px 0 8px 13px;
+    $pTranslate: 215px;
+    .subscribable {
+        bottom: $bottom + 50px;
+        @include translate($pTranslate ,0);
+        .subscribable__title {
+            padding: $pPadding;
+            font-size: $pFontSize;
+        }   
+        &.active {
+            @include translate(0,0);
+        }
+    }
+    .fb-chat-live {
+        bottom: $bottom;
+        @include translate($pTranslate ,0);   
+        p {
+            padding: $pPadding;
+            font-size: $pFontSize;
+        }
+    
+        &.active {
+            @include translate(0,0);
+        }
+    }
+    .fb-wrap {
+        bottom: $bottom + 35px;
+    }
+}

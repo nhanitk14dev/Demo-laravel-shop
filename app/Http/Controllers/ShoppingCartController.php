@@ -1,46 +1,68 @@
 <?php
 
 namespace App\Http\Controllers;
-use Gloudemans\Shoppingcart\Facades\Cart; //phai them thu vien nay 
+use Gloudemans\Shoppingcart\Facades\Cart; //phai them thu vien nay
 use Illuminate\Http\Request;
-use App\Models\Products;
+use App\Models\Product;
 use App\Models\User;
 use App\Models\UserDetail;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use Hash;
 use validator;
+use App\Repositories\ProductRepository;
+use App\Repositories\ProductCategoryRepository;
 
 class ShoppingCartController extends Controller
 {
-	
-	public function viewCart()
+    protected $product;
+
+    public function __construct( ProductRepository $product,
+            ProductCategoryRepository $category)
     {
-        $carts = Cart::content();
-        return view('frontend.page.cart',compact('carts'));
-        
+        $this->product = $product;
+        $this->category = $category;
     }
-    public function addItem( $id) 
+
+	  public function viewCart()
     {
-        $products = Products::find($id);
+        $product_other = $this->product->listProductNew($is_new = false);
+        $carts = Cart::content();
+        return view('frontend.shoppingcart.viewcart',compact('carts', 'product_other'));
+
+    }
+    public function addCart(Request $request, $slug)
+    {
+        $products = $this->product->findProductBySlug($slug);
+
         Cart::add([
-                        ['id'=>$id,
-                        'name'=>$products->name,
-                        'qty'=>1,
-                        'price'=>$products->unit_price,
-                        'options'=>['img'=>$products->image]]
+                        ['id'=> $products->id,
+                        'name'=> $products->name,
+                        'qty'=> $request->qty,
+                        'price'=> $products->unit_price,
+                        'options'=>[
+                          'img'=> $products->photo->file_name,
+                          'color' => $request->color,
+                          'size'  => $request->size
+                        ]]
                   ]);
+
         $carts = Cart::content();
-    	
-    	return view('frontend.page.cart',compact('carts'));
+
+        //return view('frontend.shoppingcart.viewcart',compact('carts'));
+
+        return redirect()->route('cart.view');
     }
-    public function update(Request $request, $id)
+    public function updateCart(Request $request, $id)
     {
         if ($request->ajax()) {
            echo "ok";
            $id = $request->id;
            $qty = $request->qty;
+
            Cart::update($id,$qty);
+        }else{
+          echo 'ko co ajax';
         }
 
     }
@@ -48,8 +70,8 @@ class ShoppingCartController extends Controller
     public function removeItem($id)
     {
         Cart::remove($id);
-        return redirect()->route('giohang');
-        
+        session()->flash('success', trans('message.remove_cart_success'));
+        return redirect()->route('cart.view');
     }
 
     public function ShipOrder()
@@ -117,7 +139,7 @@ class ShoppingCartController extends Controller
     //trường hợp khách hàng ko đăng kí tài khoản
     public function postChecKout(Request $req)
     {
-        
+
         $cart_item = \Cart::content();
         $cart_total = \Cart::subtotal();
         if($cart_item->isEmpty()) {
@@ -177,9 +199,9 @@ class ShoppingCartController extends Controller
                 }
 
                 session()->flash('success', 'Tạo thành công !');
-                
 
-            }    
+
+            }
 
         Cart::destroy();
 
@@ -188,5 +210,5 @@ class ShoppingCartController extends Controller
         return redirect()->back();
 
     }
-    
+
 }

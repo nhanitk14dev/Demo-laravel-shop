@@ -1,1 +1,0 @@
-<h1>trang page</h1>

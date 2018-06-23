@@ -1,7 +1,7 @@
 ShopCake:
 0. id_type = categories_id => tree, type_product = Product_categories model
    - name_trans = name in category, name product translation
-1. Model:class in relationship / 
+1. Model:class in relationship /
 	- not id_foreign,..=> errors user seeder
 	- $timestamps = false;
 
@@ -16,18 +16,18 @@ ShopCake:
 
 5. translation:
    - mca: https://tutorials.kode-blog.com/laravel-5-localization
-   - menu: 
-   - kernel.php 
+   - menu:
+   - kernel.php
    - lang:/route.php
    - trang chu: front/page/en[vi] => header
    - trans('route.'), {!! __('f_top.') !!}
    - route/en/vi: translation => view  currentPageMenu > slug
 
-6. Session: 
+6. Session:
    - config translate: en/vi
    - redirect()->back(); moi su dung dc, ko cho qua route moi(/)
 
-7. ViewComposer: 
+7. ViewComposer:
    - category
 
 8. Upload Image:
@@ -37,11 +37,14 @@ ShopCake:
    - config/ photo.php
 9. Create Products:
    - name: config => array
-   - config: sluggable/ => trans->name ?? 
+   - config: sluggable/ => trans->name ??
 10. tawk.to
    email: nhanitk14dev@gmail.com  pass: 140896nhanitk14
 
 
 //-----------tao database------------
 ktra 2table product,product_cateogies co chua---> product_category
-uploadPhoto -> Ok
+uploadPhoto -> Ok ---composer require intervention/image
+
+//tryền COMPOSER_LOCALES trong ComposerServiceProvider thì thêm vào define.php
+ => admin.layouts.partials.define.php

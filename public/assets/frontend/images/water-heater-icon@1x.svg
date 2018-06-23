@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="47.469" height="44.437" viewBox="0 0 47.469 44.437">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""/>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?></metadata>
+<defs>
+    <style>
+      .cls-1 {
+        filter: url(#filter);
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: none;
+        stroke: #f0f;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 2px;
+      }
+
+      .cls-3, .cls-4 {
+        fill-rule: evenodd;
+      }
+
+      .cls-4 {
+        stroke-width: 3px;
+      }
+
+      .cls-5 {
+        font-size: 6px;
+        text-anchor: middle;
+        fill: #fff;
+        font-family: Nunito;
+        font-weight: 800;
+      }
+
+      .cls-6 {
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+    </style>
+    <filter id="filter" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#fefefe"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="water-heater-icon" class="cls-1">
+    <circle class="cls-2" cx="22.469" cy="22.531" r="15"/>
+    <path id="Ellipse_5_copy_3" data-name="Ellipse 5 copy 3" class="cls-3" d="M932.969,780.969a20.914,20.914,0,0,1-4.472,12.956" transform="translate(-889.531 -758.469)"/>
+    <path id="Ellipse_5_copy_2" data-name="Ellipse 5 copy 2" class="cls-3" d="M926.46,796.168a20.93,20.93,0,0,1-12.944,5.745" transform="translate(-889.531 -758.469)"/>
+    <path id="Ellipse_5_copy_4" data-name="Ellipse 5 copy 4" class="cls-3" d="M910.333,801.906a20.917,20.917,0,0,1-12.645-5.541" transform="translate(-889.531 -758.469)"/>
+    <path id="Ellipse_5_copy_5" data-name="Ellipse 5 copy 5" class="cls-4" d="M896.648,795.331a20.924,20.924,0,0,1-5.632-12.937m0.01-2.982a20.907,20.907,0,0,1,5.013-12.128" transform="translate(-889.531 -758.469)"/>
+    <path id="Ellipse_5_copy_6" data-name="Ellipse 5 copy 6" class="cls-4" d="M898.027,765.264a20.922,20.922,0,0,1,13.942-5.295" transform="translate(-889.531 -758.469)"/>
+    <text id="oC" class="cls-5" x="41.748" y="16.983"><tspan dy="-3.6">o<tspan class="cls-6">C</tspan></tspan></text>
+  </g>
+</svg>

@@ -51,5 +51,6 @@ return [
     'footer' => 'Shop Bánh Sinh Nhật',
     'media' => 'Đa phương tiện',
     'product_delete_from_file' => 'Xóa sản phẩm',
-    'product_upload_from_file' => 'Tạo sản phẩm từ file'
+    'product_upload_from_file' => 'Tạo sản phẩm từ file',
+    'sliders' => 'Sliders'
 ];

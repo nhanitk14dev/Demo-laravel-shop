@@ -1,0 +1,105 @@
+.slick-next {  
+    &:before {
+        content: "";
+    }
+}
+
+/* XS Portrait */
+@media (max-width: 480px) {
+    .slick-dots {
+        bottom: -21px;
+        li {
+            width: 15px;
+            height: 15px;
+            margin: 0 1px;
+            button {
+                padding: 0;
+                width: 15px;
+                height: 15px;
+                &:before {
+                    font-size: 11px;
+                    color: rgba(169,49,51,0.5);
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+            &.slick-active {
+                button {
+                    &:before {
+                        color: rgba(169,49,51,1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Lightbox Style
+.lightbox-content {
+    display: none;
+}
+.lightbox-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: Helvetica Neue Medium;
+    color: #ffffff;
+}
+.lightbox-info {
+    font-family: Helvetica Neue Light;
+    font-size: 16px;
+    color: #ffffff;
+}
+.slick-lightbox-close {
+    top: 30px;
+    right: 30px;
+    height: 48px;
+    width: 48px;
+}
+.slick-lightbox-close:before {
+    font-size: 48px;
+    line-height: 0.4;
+}
+.slick-lightbox-slick {
+    .slick-arrow {
+        display: block;
+        z-index: 110;
+    }
+    .slick-next, .slick-prev {
+        transition: 200ms ease-in-out;
+        -moz-transition: 200ms ease-in-out;
+        -webkit-transition: 200ms ease-in-out;
+        -o-transition: 200ms ease-in-out;
+        width: 33px;
+        height: 65px;
+    }
+    .slick-next {   
+        background: url(../images/icon-slick-next-3.png) center center no-repeat !important;
+        right: 25px;
+        &::before {
+            content: "";
+        }
+        &:hover {
+            background: url(../images/icon-slick-next-hover-2.png) center center no-repeat !important;
+        }     
+    }
+    .slick-prev {
+        background: url(../images/icon-slick-prev-3.png) center center no-repeat !important;
+        left: 25px;
+        z-index: 1;
+        &::before {
+            content: "";
+        }
+        &:hover {
+            background: url(../images/icon-slick-prev-hover-2.png) center center no-repeat !important;
+        }
+    }
+    @media (max-width: 480px) {
+        .slick-next {
+            right: 6px;
+        }
+        .slick-prev {
+            left: 6px;
+        }
+    }
+}
+

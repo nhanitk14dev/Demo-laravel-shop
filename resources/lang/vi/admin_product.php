@@ -43,13 +43,7 @@ return [
         'protective' => 'Bảo vệ dòng rò (mA)',
         'performance' => 'Hiệu suất sau 16h (%)',
         'gallery_qr' => 'Mã QR code cho thư viện ảnh',
-        'key_word' => 'Từ khóa tìm kiếm',
-        'promotion_price' => 'Giảm giá',
-        'unit_price' => 'Đơn giá',
-        'rating' => 'Xếp loại',
-        'start_date_promotion' => 'Bắt đầu giảm giá',
-        'end_date_promotion' => 'Hết hạn giảm giá',
-        'unit' => 'Đơn vị'
+        'key_word' => 'Từ khóa tìm kiếm'
     ],
 
     "table" => [

@@ -1,0 +1,96 @@
+.career {
+    background: #ffffff;
+    border: 1px solid #ebebeb;
+    margin-bottom: 20px;
+    .career__post {        
+        .career__post--title {
+            margin: 0px 0px 12px;
+            font-family: Helvetica Neue Medium;
+            font-size: 20px;
+        }
+        .career__post--tag {
+            text-transform: uppercase;
+            font-size: 12px;
+            color: #94999a;
+            margin-bottom: 27px;
+        }
+        .career__post--desc {
+            letter-spacing: 1px;
+            margin-bottom: 27px;
+        }
+        .readmore {
+            font-family: Helvetica Neue Medium;
+            color: $color-brand;
+        }
+        @media (min-width: 768px) {
+            width: 70%;
+            float: left;
+            padding: 30px;  
+            border-right: 1px solid #ebebeb;
+        }
+        @media (max-width: 767px) {
+            float: none;
+            width: 100%;
+            padding: 15px 0 20px ;
+            .career__post--title {
+                margin-bottom: 5px;
+            }
+            .career__post--desc,
+            .career__post--tag {
+                margin-bottom: 12px;
+            }
+        }
+    }
+    .career__meta {        
+        
+        @media (min-width: 768px) {
+            width: 30%;
+            float: left;
+            padding: 54px 48px;
+        }
+        ul.career__meta--list {
+            li {
+                margin-bottom: 20px;
+                i {
+                    color: $color-brand;
+                    font-size: 16px;
+                }
+            }            
+        }
+
+        @media (max-width: 767px) {
+            float: none;
+            width: 100%;
+            padding: 20px 0 15px;
+            border-top: 1px solid #ebebeb;
+            border-bottom: 1px solid #ebebeb;
+            margin-bottom: 10px;
+            ul.career__meta--list li {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+.wrap-career-list {
+    .career {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .wrap-career-detail,
+    .wrap-career-list {
+        margin-left: 15px;
+        margin-right: 15px;
+        .post--content {
+            > *:first-child {
+                margin-top: 0
+            }
+            > *:last-child {
+                margin-bottom: 0
+            }
+        }
+    }
+}

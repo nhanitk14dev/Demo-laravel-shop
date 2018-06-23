@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Admin | Shop1</title>
+    <title>Admin | Shop2</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <script>
@@ -30,7 +30,7 @@
 <body class="login-page">
 <div class="login-box">
     <div class="logo">
-        <a href="javascript:void(0);">Admin <b>Shop1</b></a>
+        <a href="javascript:void(0);">Admin <b>Shop2</b></a>
     </div>
     <div class="card">
         <div class="body">

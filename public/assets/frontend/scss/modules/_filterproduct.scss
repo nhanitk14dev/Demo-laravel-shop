@@ -1,0 +1,242 @@
+// ================ New Filter ================ //
+.filter-box {
+    padding: 40px 0px;
+    .form-control {
+        margin-bottom: 10px;
+        height: 40px;
+    }
+    .row-filter-box {
+        font-size: 0;
+        text-align: center;
+        @include clearfix;
+        .col-filter-box {
+            display: inline-block;
+            font-size: 14px;
+            margin: 0px 5px;
+            max-width: 270px;
+            @media (min-width: 768px) and (max-width: 1024px) {
+                width: 50% !important;
+            }
+            @media (max-width: 767px) {
+                width: auto !important;
+                display: block;
+                max-width: 100%;
+                margin: 0;
+            }
+        }
+        .center {
+            @media (min-width: 1025px) {
+                text-align: left !important;
+            }            
+        }
+    }
+}
+
+.filter-fieldset {
+    position: relative;
+    margin-bottom: 10px;    
+    text-align: left;
+    @media (min-width: 1025px) {
+
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+        // width: 50%;
+    }
+    .filter-select-box {
+        border: 1px solid #d7d7d7;
+        color: #999999;
+        position:  relative;
+        // padding: 6px 12px;
+        background: #fff;
+        cursor: pointer;
+        .f-select {
+            display: block;
+            padding: 8px 12px;
+        }
+        i {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            height: 34px;
+            width: 34px;
+            text-align: center;
+            line-height: 34px;
+            display: inline-block;
+            &.up {
+                -moz-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+                color: $color-brand;
+            }
+            &.icon_close {
+                color: $color-brand;
+            }
+        }
+        &.active {
+            background: #f6e8e8;
+            border: 1px solid $color-brand;
+            color: #333333;
+        }
+    }
+    .filter-option-box {
+        display: none;
+        position: absolute;
+        top: 120%;
+        left: 0;
+        border: 1px solid $color-brand;        
+        padding: 5px;        
+        background: #fff;
+        width: 100%;
+        z-index: 5;
+        @include box_shadow(0px, 0px, 16px, rgba(169,49,51,0.3));
+        @include rounded(3px);
+        &:after {
+            content: "";
+            position: absolute;
+            right: 50%;
+            margin-right: -4px;
+            top: -9px;
+            background: url(../images/icon-arrow-up.png) center center no-repeat;
+            width: 11px;
+            height: 10px;
+        }
+        dl.f-option {
+            margin-bottom: 0px;
+            dt {
+                @include clearfix;
+                padding: 10px 35px 10px 10px;
+                margin-right: 5px;
+                border: 1px solid transparent;
+                cursor: pointer;
+                position: relative;
+                badge {
+                    position: absolute;
+                    top: 10px;
+                    right: 0px;
+                    color: #ffffff;
+                    background: #000000;
+                    border-radius: 20px;
+                    padding: 3px 6px;
+                    font-size: 10px;
+                    margin-top: 0px;
+                    margin-right: 6px;
+                }
+                &.selected {
+                    background: #f6e8e8;
+                    border: 1px solid transparent;                    
+                }
+            }
+        }
+    }
+
+    
+}
+
+.filter-box.pdf-search {
+    padding: 40px 0px 0px;
+    margin: 0px 40px;
+    .row-filter-box {
+        text-align: left !important;    
+    }    
+}
+
+
+// Clear Form
+.clearform {
+    border-radius: 100%;
+    background: #eaeaea;
+    color: #999999;
+    padding: 6px 11px;
+    border: none;
+    margin-left: 48px;
+    text-align: center;
+    @media (min-width: 1440px) and (max-width: 1599px) {
+        margin-left: 25px;
+    }
+    @media (min-width: 1280px) and (max-width: 1439px) {
+        margin-left: 0px;
+    }
+    @media (min-width: 1200px) and (max-width: 1279px) {
+        margin-left: -1px;
+    }
+    &:hover {
+        background: $color-brand;
+        color: #ffffff;
+    }
+    .icon_close {
+        font-size: 16px;
+        line-height: inherit;
+        margin-left: -1px;
+    }
+}
+
+
+
+/* ===================== RESPONSIVE ==================== */
+
+@media (min-width: 1280px) {
+
+}
+@media (min-width: 1200px) and (max-width: 1280px) {
+    .btn-red {
+        padding: 8px 15px;
+    }
+}
+
+/* lg */ 
+@media (min-width: 1200px) {
+
+}
+
+/* md */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .clearform {
+        margin-left: 5px;
+    }
+    .btn-red {
+        padding: 8px 15px;
+    }
+}
+
+
+/* sm */
+@media (min-width: 768px) and (max-width: 991px) {
+    .submit {
+        font-size: 12px;
+    }
+    .clearform {
+        margin-left: 5px;
+    }
+}
+
+/* xs */
+@media (max-width: 767px) {
+
+}
+
+/* XS Portrait */
+@media (max-width: 480px) {
+    .filter-box {
+        padding: 22px 0;
+        .row-filter-box {
+            .col-filter-box {
+                width: auto !important;
+                font-size: 13px;
+                display: block;
+                margin: 0;
+                .filter-fieldset .filter-select-box i {
+                    line-height: 37px;
+                }
+                .btn-red {
+                    font-size: 13px;
+                    vertical-align: top;
+                }
+                .clearform {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}

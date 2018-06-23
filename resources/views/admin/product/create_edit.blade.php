@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css"/>
     <!--for branch tab-->
     <link rel="stylesheet" href="/assets/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css"/>
+
+    <style type="text/css">
+        .dropdown-menu {
+            margin-top: 350px;
+        }
+    </style>
 @endsection
 
 

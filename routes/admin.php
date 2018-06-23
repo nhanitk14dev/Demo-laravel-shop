@@ -8,7 +8,7 @@ Route::group(
     function () {
     Route::group(["prefix" => "admin"], function () {
 
-            Auth::routes(); 
+            Auth::routes();
 
             //copy file kernel.php trong App\Http
             Route::group(['middleware' => ['auth',"permission:admin.index"]], function () {
@@ -25,6 +25,12 @@ Route::group(
                 resourceAdmin('products', 'ProductController', 'product');
 
                 resourceAdmin('product-categories', 'ProductCategoryController', 'product_category', 'product.category');
+
+                resourceAdmin('sizes', 'SizeController', 'size');
+
+                resourceAdmin('colors', 'ColorController', 'color');
+
+                resourceAdmin('sliders', 'SliderController', 'slider');
             });
         });
 

@@ -1,0 +1,273 @@
+.navbar-brand {    
+    @media (min-width: 768px) {
+        width: 60px;
+        margin: 8px !important;
+    }
+    @media (max-width: 767px) {
+        width: 40px;
+        float: none;
+    }
+    img {
+        @media (max-width: 767px) {
+            max-width: 40px !important;
+            margin: 5px auto !important; 
+        }
+    }
+}
+
+.fc-nav {
+    margin-bottom: 0;
+    background-color: #fff;
+    @include transition(all 0.2s ease);
+}
+.fixed {
+    transition: 200ms ease-in-out;
+    -moz-transition: 200ms ease-in-out;
+    -webkit-transition: 200ms ease-in-out;
+    -o-transition: 200ms ease-in-out;
+    background: #fff;
+    // top: 0px;
+    left: 0px;        
+    width: 100%;
+    position: fixed !important;
+    z-index: 110;
+    &.navbar {
+        @include box-shadow(0, 0, 10px, rgba(#000, 0.2) );
+        @media(min-width: 768px) {
+            top: 38px;
+        }
+        @media(max-width: 767px) {
+            top: 0px;
+        }       
+    }
+    &.top {
+        top: 0px;
+    }
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.header-socials {
+    padding: 10px;
+    // margin-left: 19px;
+    text-align: center;
+    .top__list {
+        float: none !important;
+        .top__item {
+            padding: 0 4px;
+        }
+    }
+}
+.top {
+    background: $color-brand url(../images/bg-red.jpg) top left repeat-x;
+    padding-top: 2px;
+    .top__list {
+        margin-bottom: 0px;
+        float: right;
+    }
+    .top__item {        
+        display: inline-block;
+        margin-right: 5px;
+        font-size: 23px;        
+        .top__item--color {
+            color: #fff;
+            opacity: 0.4;
+            transition: 200ms ease-in-out;
+            -moz-transition: 200ms ease-in-out;
+            -webkit-transition: 200ms ease-in-out;
+            -o-transition: 200ms ease-in-out;
+            &:hover {
+                opacity: 1;
+            }
+        }  
+        & img {
+            margin-top: -6px;
+        }      
+    }
+    .btn-old_website {
+        color: #fff;
+        margin-top: 3px;
+        a {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            @include rounded(30px);
+            text-align: center;
+            padding: 2px 16px;
+            color: #fff;
+            &:hover {
+                background: rgba(255,255,255,0.4);
+            }
+        }        
+    }
+}
+
+// Link Page Search
+.link-search-page {
+    display: block;
+    margin-top: 4px;
+    color: #febdbf;
+    font-size: 14px;
+    i {
+        color: #ffffff;
+        border-radius: 100% !important;
+        background: rgba(255,255,255,0.4);
+        padding: 6px;
+        font-size: 12px;
+    }
+    &:hover, &:focus, &:active {
+        color: #febdbf;
+    }
+}
+
+
+/* ===================== RESPONSIVE ==================== */
+
+@media (min-width: 1280px) {
+
+}
+@media (min-width: 1200px) and (max-width: 1280px) {
+
+}
+
+/* lg */ 
+@media (min-width: 1200px) {
+   .home {
+        header {
+            position: absolute;
+            width: 100%;
+            z-index: 110;
+        }
+    }
+}
+
+/* md */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .home {
+        header {
+            position: absolute;
+            width: 100%;
+            z-index: 110;
+        }
+    }
+    .top {
+        .row {
+            > div {
+                &:nth-child(3),
+                &:first-child {
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+
+/* sm */
+@media (min-width: 768px) and (max-width: 991px) {
+    .top__list {
+        margin-bottom: 0px;
+        .top__item {
+            display: inline-block;
+            // padding: 2px 0px;
+            font-size: 23px;
+        }
+    }    
+    .link-search-page {
+        margin-top: 7px;
+    }
+    .top {
+        .row {
+            > div {
+                    width: auto;
+            }
+        }
+    }
+}
+
+/* xs */
+@media (max-width: 767px) {
+    .fc-nav {
+        box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .top__list {
+        margin-bottom: 0px;
+        .top__item {
+            display: inline-block;
+            padding: 2px 0px;
+            font-size: 23px;
+        }
+    }
+    .btn--search {
+        position: absolute;
+        top: 18%;
+        right: 20px;
+        margin: 0px;
+        padding: 0px;
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+        background: transparent;
+        color: $color-brand;
+        font-size: 30px;
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .mobile-form-search {
+        transition: 200ms ease-in-out;
+        -moz-transition: 200ms ease-in-out;
+        -webkit-transition: 200ms ease-in-out;
+        -o-transition: 200ms ease-in-out;
+        position: absolute;
+        top: 10px;
+        z-index: 100;
+        right: 2%;
+        width: 96%;
+        height: 45px;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        .input--search  {
+            padding: 10px 10px 10px 40px ;
+            color: #222;
+            width: 94%;
+            background: url(../images/icon-search-mobile.png) center left 10px no-repeat;
+            &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                color: #ccc;
+            }
+            &::-moz-placeholder { /* Firefox 19+ */
+                color: #ccc;
+            }
+            &::-ms-input-placeholder { /* IE 10+ */
+                color: #ccc;
+            }
+            &::-moz-placeholder { /* Firefox 18- */
+                color: #ccc;
+            }
+            &:focus {
+                border: none;
+            }
+        }
+        .btn--search-close {
+            color: #ccc;
+        }
+    }
+}
+
+/* XS Portrait */
+@media (max-width: 480px) {
+    
+}

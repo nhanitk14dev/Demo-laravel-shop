@@ -1,0 +1,161 @@
+// Timeline Slider
+.wrap-timeline-slider {
+  position: relative;
+  .timeline-slider__bg {
+      position: absolute;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      z-index: 1;      
+      @media (max-width:480px) {
+          width: 50px;
+      }  
+  }
+  .timeline-slider__bg.next {        
+      right: 0;      
+      background: rgba(255,255,255,0);
+      background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%, rgba(255,255,255,1) 100%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,0)), color-stop(70%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,1)));
+      background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%, rgba(255,255,255,1) 100%);
+      background: -o-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%, rgba(255,255,255,1) 100%);
+      background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%, rgba(255,255,255,1) 100%);
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%, rgba(255,255,255,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );  
+      @media (min-width: 480px) and (max-width:600px) {
+          background: rgba(255,255,255,0);
+          background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 85%, rgba(255,255,255,1) 100%);
+          background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,0)), color-stop(85%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,1)));
+          background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 85%, rgba(255,255,255,1) 100%);
+          background: -o-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 85%, rgba(255,255,255,1) 100%);
+          background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 85%, rgba(255,255,255,1) 100%);
+          background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 85%, rgba(255,255,255,1) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+      }  
+  }
+  .timeline-slider__bg.prev {
+      left: 0;        
+      background: rgba(255,255,255,1);
+      background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(30%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,0)));
+      background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%);
+      background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%);
+      background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%);
+      background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+      @media (min-width: 480px) and (max-width:600px) {
+          background: rgba(255,255,255,1);
+          background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 100%);
+          background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(15%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,0)));
+          background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 100%);
+          background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 100%);
+          background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 100%);
+          background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+      }
+  }
+
+  .timeline-slider {
+      // box-shadow: inset 95px 0 40px -4px rgba(255, 255, 255, 0.8), inset 95px 0 40px -4px rgba(255, 255, 255, 0.8);
+      overflow: hidden;
+      .slick-slide {            
+          img {
+              display: initial !important;
+          }
+      }
+      .slick-next, .slick-prev {
+          width: 29px;
+          height: 55px;
+          
+          z-index: 100;
+          // @media (max-width: 767px) {
+          //     height: 300px;
+          // }
+      }
+      
+      .slick-next {        
+          background: url(../images/icon-slick-next-6.png) center center no-repeat !important;      
+          right: 0px;
+          &::before {
+              content: "";
+          }
+          &:hover {
+              background: url(../images/icon-slick-next-6.png) center center no-repeat !important;
+              outline: 0;
+              opacity: .9;
+          }     
+      }
+      .slick-prev {
+          background: url(../images/icon-slick-prev-6.png) center center no-repeat !important;        
+          left: 0px;
+          &::before {
+              content: "";
+          }
+          &:hover {
+              background: url(../images/icon-slick-prev-6.png) center center no-repeat !important;
+          }
+      }
+      .timeline-slider-item {
+          padding: 0px 10px; 
+          margin: 10px 0px;
+          border-top: 1px solid #e1e1e1;
+          outline: none !important;
+          
+          .timeline-item--years {
+              width: auto;
+              display: inline-block;
+              padding: 13px 15px;
+              margin-bottom: 30px;
+              background: $color-brand;
+              position: relative;
+              color: #ffffff;
+              .timeline-item--icon-circle {
+                  position: absolute;
+                  top: -6px;
+                  left: -6px;
+                  width: 12px;
+                  height: 12px;
+                  border: 1px solid $color-brand;
+                  background: #ffffff;
+                  content: "";
+                  display: block;
+                  border-radius: 100%;
+                  -moz-border-radius: 100%;
+                  -webkit-border-radius: 100%;
+              }
+          }
+          .timeline-item--title {
+              font-family: Helvetica Neue Medium;
+              font-size: 16px;
+              color: #000000;
+              margin-bottom: 20px;
+          }
+          .timeline-item--content {
+              table {
+                  border: none;
+                  td {
+                      border: none;
+                      padding: 10px 5px;
+                  }
+              }
+          }
+      }
+
+        @media (min-width: 1200px) {
+            height: 445px !important;
+        }
+        @media (max-width: 480px) {
+            margin-bottom: 0;
+            .timeline-slider-item {
+                margin-bottom: 0;
+                .timeline-item--years {
+                    padding: 6px 15px;
+                    margin-bottom: 20px;
+                    font-size: 0.9em;
+                }
+                .timeline-item--title {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+  }
+}

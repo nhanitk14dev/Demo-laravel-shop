@@ -8,21 +8,30 @@ Route::group(
 ],
 function(){
 	//--------------custom ------------------------
-	Route::get(LaravelLocalization::transRoute('routes.register'), 'UserController@register')->name("front.register");
-
-	Route::get('/', 'PageController@pagehome')->name("frontend.page.trangchu");
-
-	Route::get(LaravelLocalization::transRoute('routes.product'), 'ProductController@index')->name("front.product.index");
-
+	Route::get('/', 'ProductController@index')->name('page.home');
+	//products
+	Route::get(LaravelLocalization::transRoute('routes.product'),'ProductController@index')->name('product');
 	Route::get(LaravelLocalization::transRoute('routes.product_show'), 'ProductController@show')->name("front.product.show");
+	//checkout
+	Route::get(LaravelLocalization::transRoute('routes.cart'),'ShoppingCartController@viewCart')->name('cart.view');
+	Route::get(LaravelLocalization::transRoute('routes.checkout'), 'ShoppingCartController@showcart')->name('cart.checkout');
 
-	Route::get(LaravelLocalization::transRoute('routes.about_us'), 'PageController@about')->name("front.about");
+  Route::get('cap-nhat-gio/{id}',[
+			'as'=>'updateCart',
+			'uses'=>'ShoppingCartController@updateCart'
+			]);
+  Route::get('removeCart/{id}',[
+			'as'=>'removecart',
+			'uses'=>'ShoppingCartController@removeItem'
+			]);
+	//contact
+	Route::get(LaravelLocalization::transRoute('routes.contact_us'), 'PageController@contact')->name('page.contact');
+	Route::get(LaravelLocalization::transRoute('routes.faqs'), 'PageController@faqs')->name('page.faqs');
+	Route::get(LaravelLocalization::transRoute('routes.about_us'), 'PageController@about')->name('page.about');
 
-	Route::get(LaravelLocalization::transRoute('routes.contact_us'), 'PageController@contact')->name("front.contact");
-
-	Route::get(LaravelLocalization::transRoute('routes.faq'), 'PageController@faq')->name("front.faq"); 
-	Route::get(LaravelLocalization::transRoute('routes.compare_product'), 'ProductController@compare')->name("front.compare"); 
+  Route::post('addCart/{id}',[
+			'as'=>'addcart',
+			'uses'=>'ShoppingCartController@addCart'
+			]);
 
 });
-
-

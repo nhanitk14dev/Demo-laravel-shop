@@ -1,0 +1,24 @@
+.slider-for {
+    div {
+        position: relative;
+        .lightbox-photo {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            color: #ffffff;
+            font-size: 30px;
+            &:focus, &:active {
+                text-decoration: none;
+            }
+            span {
+                display: block;
+                -moz-transform: scaleX(-1);
+                -webkit-transform: scaleX(-1);
+                -o-transform: scaleX(-1);
+                transform: scaleX(-1);
+                // -ms-filter: fliph; /*IE*/
+                // filter: fliph; /*IE*/
+            }
+        }
+    }
+}

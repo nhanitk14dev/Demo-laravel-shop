@@ -1,0 +1,125 @@
+/* ---- grid ---- */
+
+.grid {
+  max-width: 1200px;
+  img {
+      width: 100%;
+      height: 100%;
+  }
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-sizer, .grid-item {
+  width: 117px;
+  // height: 117px;
+  float: left;
+  overflow: hidden;
+  /* vertical gutter */
+  margin-bottom: 5px;
+}
+
+.grid-item--width2 { 
+  width: 239px;
+}
+.grid-item--width3 { width: 361px; }
+.grid-item--width4 { width: 483px; }
+.grid-item--width5 { width: 605px; }
+.grid-item--width6 { width: 727px; }
+.grid-item--width7 { width: 849px; }
+.grid-item--width8 { width: 971px; }
+
+.grid-item--height2 { height: 239px; }
+.grid-item--height3 { height: 361px; }
+.grid-item--height4 { height: 483px; }
+.grid-item--height5 { height: 605px; }
+.grid-item--height6 { height: 727px; }
+.grid-item--height7 { height: 849px; }
+.grid-item--height8 { height: 971px; }
+
+
+
+// .grid-sizer, .grid-item {
+//   width: 12%;
+//   height: 12%;
+//   float: left;
+//   overflow: hidden;
+//   /* vertical gutter */
+//   margin-bottom: 5px;
+// }
+
+// .gutter-sizer { width: 4%; }
+
+// .grid-item--width2 { width: 24%; }
+// .grid-item--width3 { width: 36%; }
+// .grid-item--width4 { width: 48%; }
+// .grid-item--width5 { width: 60%; }
+// .grid-item--width6 { width: 72%; }
+// .grid-item--width7 { width: 84%; }
+// .grid-item--width8 { width: 96%; }
+
+// .grid-item--height2 { height: 239px; }
+// .grid-item--height3 { height: 361px; }
+// .grid-item--height4 { height: 483px; }
+// .grid-item--height5 { height: 605px; }
+// .grid-item--height6 { height: 727px; }
+// .grid-item--height7 { height: 849px; }
+// .grid-item--height8 { height: 971px; }
+
+
+@media (max-width: 1199px) {
+  .grid {
+    .grid-sizer,
+    .grid-item {
+      width: 24.5%;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .grid {
+    margin: 0 15px;
+    .grid-sizer,
+    .grid-item {
+      width: 32.9%;
+    }
+  }
+}
+@media (max-width: 719px) {
+  .grid {
+    .grid-sizer,
+    .grid-item {
+      width: 32.8%;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .grid {
+    .grid-sizer,
+    .grid-item {
+      width: 32.65%;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .grid {
+    .grid-sizer,
+    .grid-item {
+      width: 49.5%;
+    }
+  }
+}
+@media (max-width: 430px) {
+  .grid {
+    .grid-sizer,
+    .grid-item {
+      width: 49.3%;
+    }
+  }
+}

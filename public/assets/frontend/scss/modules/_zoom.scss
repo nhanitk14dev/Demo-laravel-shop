@@ -1,0 +1,46 @@
+/* these styles are for the demo, but are not required for the plugin */
+.zoom {
+	display:inline-block;
+	position: relative;
+}
+
+/* magnifying glass icon */
+.zoom:after {
+	content:'';
+	display:block; 
+	width:33px; 
+	height:33px; 
+	position:absolute; 
+	top:0;
+	right:0;
+	background:url(icon.png);
+}
+
+.zoom img {
+	display: block;
+}
+
+.zoom img::selection { background-color: transparent; }
+
+.zoom img:hover { cursor: url(grab.cur), default; }
+.zoom img:active { cursor: url(grabbed.cur), default; }
+
+.zoomContainer {
+	
+	@media (min-width: 1025px) {
+		z-index: 9;
+	}
+	@media (max-width: 480px) {
+		display: none;
+	}
+
+	.zoomWindowContainer {
+		position: absolute;
+		> div {
+			// width: 535px !important;
+			// height: 535px !important;
+		}
+	}
+}
+.zoomLens{ cursor: pointer !important; }
+

@@ -1,0 +1,189 @@
+.contact_page {
+    .fc-main {
+        padding-bottom: 70px;
+    }
+}
+.wrap-contact {
+    position: relative;
+    background: #ffffff;
+    border-radius: 10px;
+    margin-top: -266px;
+    -moz-box-shadow:    0px 0px 81px rgba(160,161,161,0.2);
+    -webkit-box-shadow: 0px 0px 81px rgba(160,161,161,0.2);
+    box-shadow:         0px 0px 81px rgba(160,161,161,0.2);
+    @media (min-width: 1440px) {
+        margin-top: -266px;
+    }
+    @media (min-width: 1200px) and (max-width: 1439px) {
+        margin-top: -266px;
+    }
+    @media (min-width: 992px) and (max-width: 1199px) {
+        margin-top: -212px;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        margin-top: -212px;
+    }
+    @media (max-width: 767px) {
+        margin-top: -80px;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding-bottom: 15px;
+    }
+    .contact__info {
+        @media (min-width: 768px) {
+            padding: 1em 10px 1em 45px;
+        }
+        [class*="col-"] {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        .contact__info--office {
+            margin-bottom: 30px;            
+            .contact__info--office-title {
+                font-family: Helvetica Neue Medium;  
+                margin-bottom: 10px;          
+                display: block;
+            }
+            .contact__info--office-address {
+                padding-left: 20px;
+            }
+            .contact__info--office-phone {
+                padding-left: 20px;
+                .icon_phone {
+                    background: #eaeaea;
+                    border-radius: 100%;
+                    text-align: center;
+                    padding: 5px;
+                }
+            } 
+            + .row {
+                .col-xs-6 {
+                    @media screen and (max-width: 992px){
+                        width: 100%;
+                        overflow: hidden;
+                        .contact__info-email,
+                        .contact__info-web {
+                            float: none;
+                        }
+                        + div {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }  
+        .contact__info-email {
+            padding-left: 20px;
+            float: left;
+        }
+        .contact__info-web {
+            padding-right: 20px;
+            float: right;
+        }
+        .contact__info-map {
+            margin: 18px 20px; 
+            padding: 0px;
+            width: 394px;
+            overflow: hidden;
+            iframe {
+                position: relative;
+                top: -50px;
+                left: -2px;
+            }
+        }      
+    }
+    
+    .contact__form {
+        
+        @media (min-width: 768px) {
+            padding: 1em 4em;
+        }
+        .form-contact {
+            .form-inline {
+                margin-bottom: 15px !important;
+            }
+            .input-captcha {
+                width: 278px;
+            }
+            button {
+                margin-top: 54px;
+            }
+        }
+    }
+}
+
+
+/* ===================== RESPONSIVE ==================== */
+
+@media (min-width: 1280px) {
+
+}
+@media (min-width: 1200px) and (max-width: 1280px) {
+
+}
+
+/* lg */ 
+@media (min-width: 1200px) {
+   .contact_page {
+       .wrap-contact {
+           width: 980px;
+       }
+   }
+}
+
+/* md */
+@media (min-width: 992px) and (max-width: 1199px) {
+    
+}
+
+
+/* sm */
+@media (min-width: 768px) and (max-width: 991px) {
+    .contact__info-map {
+        margin: 18px 20px; 
+        padding: 0px;
+        width: 300px !important;
+    }  
+}
+
+/* xs */
+@media (max-width: 767px) {
+    .contact_page {
+        .fc-main {
+            padding-bottom: 30px;
+        }
+    }
+    .wrap-contact {
+        .form-title {
+            margin: 30px 0 20px;
+            h2 {
+                margin: 0;
+            }
+            .line-gray {
+                margin: 15px auto 20px;
+            }
+        }
+        .contact__info{
+            [class*="col-"] {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+        .contact__form {
+            margin-top: -50px;
+            .form-contact button {
+                margin-top: 0;
+            }
+        }
+    }
+    .contact__info-map {
+        margin: 18px 0px !important; 
+        padding: 0px;
+        width: 100% !important;
+    } 
+}
+
+/* XS Portrait */
+@media (max-width: 480px) {
+
+}

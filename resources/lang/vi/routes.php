@@ -1,10 +1,9 @@
 <?php
 return [
-    
-    'product' => 'san-pham',
+
+    'product_index' => 'san-pham',
     'product_category' => 'san-pham/loai/{slug}',
-    'product_show' => 'san-pham/loai', ///{slug}
-    
+
     // custom page
     'home' => '/',
     'login' => 'dang-nhap',
@@ -14,6 +13,10 @@ return [
     'page_by_slug' => '{slug}',
     'checkout'=> 'dat-hang',
     'about_us' => 'gioi-thieu',
-    'faq' => 'faq',
-    'compare_product' => 'so-sanh-san-pham'
+    'cart' => 'gio-hang',
+    'product' => 'san-pham',
+    'product_show' => 'san-pham/{slug}',
+
+    'faqs' => 'cau-hoi-thuong-gap'
+
 ];

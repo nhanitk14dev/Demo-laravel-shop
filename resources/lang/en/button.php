@@ -28,5 +28,8 @@ return [
     'click_here' => 'Click here',
     'scan' => 'Scan',
     'filter' =>'Filter products',
-    'add' => 'Add'
+    'add' => 'Add',
+    'subcribe' => 'Subcribe',
+    'add_cart' => 'Add to cart',
+    'zoom' =>'Zoom'
 ];

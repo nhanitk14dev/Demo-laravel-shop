@@ -1,0 +1,143 @@
+#pdf-show {
+    padding: 0px 0px 50px;
+}
+// Profile & Magazine
+.slider-profile {
+  position: relative;  
+  margin: auto;
+  z-index: 1;
+  @media (min-width: 481px) {
+    padding: 0px 25px;
+    width: 90%;
+  }
+  @media (max-width: 480px) {
+      width: 100%;
+      padding: 0px 15px;
+  }
+  .view-full-doc {
+      display: inline-table;
+      background: $color-brand;
+      padding: 10px 30px;
+      margin-bottom: 10px;
+      border-radius: 30px;
+      color: #ffffff;
+      text-transform: uppercase;
+      font-size: 12px;
+      display: none;
+  }
+  .slick-next, .slick-prev {
+      transition: 200ms ease-in-out;
+      -moz-transition: 200ms ease-in-out;
+      -webkit-transition: 200ms ease-in-out;
+      -o-transition: 200ms ease-in-out;
+      width: 33px;
+      height: 65px;
+  }
+  .slick-next {   
+      background: url(../images/icon-slick-next-3.png) center center no-repeat !important;
+      left: -25px;
+      &::before {
+          content: "";
+      }
+      &:hover {
+          background: url(../images/icon-slick-next-hover-3.png) center center no-repeat !important;
+      }     
+  }
+  .slick-prev {
+      background: url(../images/icon-slick-prev-3.png) center center no-repeat !important;
+      right: -25px !important;
+      left: inherit;
+      z-index: 1;
+      &::before {
+          content: "";
+      }
+      &:hover {
+          background: url(../images/icon-slick-prev-hover-3.png) center center no-repeat !important;
+      }
+  }
+}
+
+.slider-profile-nav {
+  margin-top: 15px;
+  margin-left: 40px;
+  margin-right: 40px;
+  // width: 81%;
+  // Fix Mobile & Galaxy S5
+  @media (min-width: 320px) and (max-width: 360px) {
+      width: 74%;
+  } 
+  // Fix IP 6 + IP 6 Plus
+  @media (min-width: 375px) and (max-width: 414px) {
+      width: 77%;
+  } 
+  .slider-profile__item {
+      text-align: center;
+      figure {
+          -moz-box-shadow:    0px 0px 5px rgba(76,76,76,0.13);
+          -webkit-box-shadow: 0px 0px 5px rgba(76,76,76,0.13);
+          box-shadow:         0px 0px 5px rgba(76,76,76,0.13);
+          background: #ffffff;
+          padding: 9px;
+          margin-bottom: 20px;
+      }
+      a.active {
+          color: $color-brand;
+      }
+  }
+  .slick-slide {
+      cursor: pointer;
+      padding: 8px;
+      margin: 0px 8px;
+      @media (min-width: 320px) and (max-width: 360px) {
+          margin: 0px 5px;
+          padding: 5px;
+      } 
+  }   
+  .slick-next, .slick-prev {
+      transition: 200ms ease-in-out;
+      -moz-transition: 200ms ease-in-out;
+      -webkit-transition: 200ms ease-in-out;
+      -o-transition: 200ms ease-in-out;
+      width: 33px;
+      height: 65px;
+      z-index: 100;
+  }
+  .slick-next {  
+      background: url(../images/icon-slick-next-3.png) center center no-repeat !important;
+      &::before {
+          content: "";
+      }
+      &:hover {
+          background: url(../images/icon-slick-next-hover-3.png) center center no-repeat !important;
+      }  
+      right: -40px;    
+      @media (max-width: 320px) {
+          bottom: 0px;
+      }
+  }
+  .slick-prev {
+      background: url(../images/icon-slick-prev-3.png) center center no-repeat !important;
+      right: -25px !important;
+      z-index: 1;
+      &::before {
+          content: "";
+      }
+      &:hover {
+          background: url(../images/icon-slick-prev-hover-3.png) center center no-repeat !important;
+      }
+      left: -40px;
+      @media (max-width: 320px) {
+          bottom: 0px;
+      }
+  }
+} 
+
+/* XS Portrait */
+@media (max-width: 480px) {
+  // Slider Profile
+  .slider-profile-nav {
+      .slick-dots {
+          bottom: -60px;
+      }
+  }
+}

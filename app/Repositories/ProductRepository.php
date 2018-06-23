@@ -13,7 +13,7 @@ interface ProductRepository extends RepositoryInterface
 {
     public function getModel();
 
-    
+    public function findProductBySlug($slug);
 
     public function datatable();
 
@@ -22,6 +22,11 @@ interface ProductRepository extends RepositoryInterface
     public function update(array $input, $id);
 
     public function destroy($id);
+
+    public function listProductNew($is_new = false, $limit = 0);
+
+
+    public function listProductPromotion();
 
     
 }

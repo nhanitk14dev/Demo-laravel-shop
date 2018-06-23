@@ -1,0 +1,29 @@
+.wrap-career-detail {
+    .career__post {
+        border-right: none;
+        .btn {
+            margin-top: 20px;
+        }
+    }
+    .career__meta {
+        .btn-apply {
+            padding: 8px 52px;
+        }
+    }
+}
+
+.wrap-input-file {
+    margin-top: 0px;
+    padding-bottom: 50px;
+    overflow: hidden;
+    a {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    .upload-file-info {
+        position: absolute;
+        top: 25px;
+        left: 0px;
+    }
+}

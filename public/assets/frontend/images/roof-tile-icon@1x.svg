@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="66.969" height="38" viewBox="0 0 66.969 38">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""/>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?></metadata>
+<defs>
+    <style>
+      .cls-1 {
+        filter: url(#filter);
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #7accc8;
+        stroke-linecap: round;
+        stroke-width: 2px;
+        fill-rule: evenodd;
+      }
+    </style>
+    <filter id="filter" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#fefefd"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="roof-tile-icon" class="cls-1">
+    <path class="cls-2" d="M630.445,801.889c1.779-2.139,11-12.155,20.789,1.111,2.526-3.105,9.947-12.126,20.789-1.111,4.335-3.707,11.366-9.872,22.977,0-1.32-7.77-6.565-31.105-6.565-31.105s-11.353-8.2-18.6,0c-3.072-2.859-11.261-6.827-18.6,0-4.741-3.534-11.2-6.488-17.507,1.111C632.912,780.644,628.665,804.028,630.445,801.889Z" transform="translate(-629.031 -766)"/>
+    <path class="cls-2" d="M650.139,799.667V771.9" transform="translate(-629.031 -766)"/>
+    <path id="Shape_2_copy_2" data-name="Shape 2 copy 2" class="cls-2" d="M646.857,791.891V776.338" transform="translate(-629.031 -766)"/>
+    <path id="Shape_2_copy" data-name="Shape 2 copy" class="cls-2" d="M670.928,799.667L668.74,771.9" transform="translate(-629.031 -766)"/>
+    <path id="Shape_2_copy_3" data-name="Shape 2 copy 3" class="cls-2" d="M675.305,793l-2.188-18.885" transform="translate(-629.031 -766)"/>
+  </g>
+</svg>

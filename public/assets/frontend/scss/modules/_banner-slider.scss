@@ -1,0 +1,139 @@
+//Slider Banner
+.slider-banner {
+    .slick-next,
+    .slick-prev {
+        transition: 200ms ease-in-out;
+        -moz-transition: 200ms ease-in-out;
+        -webkit-transition: 200ms ease-in-out;
+        -o-transition: 200ms ease-in-out;
+        width: 33px;
+        height: 65px;
+        z-index: 1;
+    }
+    .slick-next {
+        background: url(../images/icon-slick-next-5.png) center center no-repeat !important;
+        right: 40px;
+        &:before {
+            content: "";
+        }
+        &:hover {
+            background: url(../images/icon-slick-next-hover-2.png) center center no-repeat !important;
+        }
+    }
+    .slick-prev {
+        background: url(../images/icon-slick-prev-5.png) center center no-repeat !important;
+        left: 40px;
+        &::before {
+            content: "";
+        }
+        &:hover {
+            background: url(../images/icon-slick-prev-hover-2.png) center center no-repeat !important;
+        }
+    }
+    .slider-banner-item {
+        position: relative;
+        @media (max-width: 480px) {
+            height: 180px;
+        }
+        .slider__bg {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @media (max-width: 480px) {
+                width: 768px;
+                height: auto;
+                max-width: none;
+            }
+        }
+        .slider-main-item__content {
+            color: #ffffff;
+            position: absolute;            
+            top: 50%;
+            transform: translate(0, -50%);
+            @media (min-width: 1200px) {
+                width: 60%;
+                left: 20%;
+            }
+            @media (min-width: 992px) and (max-width: 1199px) {
+                width: 60%;
+                left: 15%;
+            }
+            @media (min-width: 768px) and (max-width: 991px) {
+                width: 60%;
+                left: 12%;
+            }
+            @media (max-width: 767px) {
+                width: 90%;
+                left: 15px;
+            }
+            @media (max-width: 650px) {
+                width: 90%;
+                left: 15px;
+            }
+            @media (max-width: 480px) {
+                width: 90%;
+                left: 15px;
+            }
+            .slider-main-item__title {
+                font-family: Helvetica Neue Thin, sans-serif;
+                b {
+                    font-family: Helvetica Neue Medium;
+                    font-weight: normal;
+                }
+                @media (min-width: 1200px) {
+                    font-size: 60px;
+                    line-height: 60px;
+                }
+                @media (min-width: 992px) and (max-width: 1199px) {
+                    font-size: 2.6em;
+                    line-height: 1.2em;
+                }
+                @media (min-width: 768px) and (max-width: 991px) {
+                    font-size: 2.6em;
+                    line-height: 1.2em;
+                }
+                @media (max-width: 767px) {
+                    font-size: 2.2em;
+                    line-height: 1.2em;
+                }
+                @media (max-width: 650px) {
+                    font-size: 1.8em;
+                    line-height: 1em;
+                }
+                @media (max-width: 480px) {
+                    font-size: 1.8em;
+                    line-height: 1em;
+                }
+            }
+            .description {
+                font-family: Helvetica Neue Light, sans-serif;
+                border-left: 3px solid #8d1200;
+                padding-left: 18px;
+                & p {
+                    margin-bottom: 0px;
+                }
+                @media screen and (min-width: 1280px) {
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+                @media (min-width: 1200px) and (max-width: 1280px) {
+                    font-size: 20px;
+                }
+                @media (min-width: 992px) and (max-width: 1199px) {
+                    font-size: 20px;
+                }
+                @media (min-width: 768px) and (max-width: 991px) {
+                    font-size: 18px;
+                }
+                @media (max-width: 767px) {
+                    font-size: 16px;
+                }
+                @media (max-width: 480px) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
